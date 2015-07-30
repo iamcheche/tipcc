@@ -90,7 +90,7 @@
 		}
 
 		// Function To Fetch Selected Student Record
-		function show_student_id($data){
+		function show_linkage($data){
 			$this->db->select('*');
 			$this->db->from('linkages');
 			$this->db->where('linkage_id', $data);
@@ -98,8 +98,25 @@
 			$result = $query->result();
 			return $result;
 		}
+		
 		// Update Query For Selected Student
-		function update_student_id1($id,$data){
+		function update_linkage($id,$data){
+			$this->db->where('linkage_id', $id, $this->uri->segment(3));
+			$this->db->update('linkages', $data);
+		}
+
+		// Function To Fetch Selected Student Record
+		function show_linkage_rec($data){
+			$this->db->select('*');
+			$this->db->from('linkages');
+			$this->db->where('linkage_id', $data);
+			$query = $this->db->get();
+			$result = $query->result();
+			return $result;
+		}
+		
+		// Update Query For Selected Student
+		function view_linkage($id,$data){
 			$this->db->where('linkage_id', $id, $this->uri->segment(3));
 			$this->db->update('linkages', $data);
 		}

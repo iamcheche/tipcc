@@ -15,7 +15,7 @@
                 $data['title'] = 'TIP Career Center';
                 $this->load->view('template/header', $data);
                 $this->load->view('template/navbar');
-                $this->load->view('home_view', $data);
+                $this->load->view('home/home_view', $data);
                 $this->load->view('template/footer');
             }else{
              //If no session, redirect to login page

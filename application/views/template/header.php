@@ -5,9 +5,14 @@
         <?php echo link_tag('resources/table.css')?>
         <?php echo link_tag('assets/css/bootstrap.min.css')?>
         <?php echo link_tag('assets/css/custom.css')?>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="<?php echo base_url();?>js/linkage-validation.js"></script>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
            <title><?php echo $title ?></title>
 

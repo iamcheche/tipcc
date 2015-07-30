@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	session_start(); //we need to call PHP's session object to access it through CI
-	class Linkages extends CI_Controller {
+	class Users extends CI_Controller {
 
     	function __construct(){
 			parent::__construct();
 			$this->load->library('pagination');
 			$this->load->database();
 			$this->load->library('session');
-			$this->load->model('linkages_model');
+			$this->load->model('users_model');
 			$this->load->helper('url');
 			$this->load->helper('form');
     	}
@@ -26,11 +26,11 @@
 	          	//load the department_view
 	          	$this->load->view('linkages_view',$data);*/
 
-	          	if ($query = $this->linkages_model->view()){
+	          	if ($query = $this->users_model->view()){
 	          		$data['records'] = $query;
 	          	}   
 		        
-		        $this->load->view('linkage/linkages_view', $data);
+		        $this->load->view('users/users_view', $data);
 		    
 		    }else{
 		         	//If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
@@ -45,7 +45,7 @@
                 $data['title'] = 'TIP Career Center';
                 $this->load->view('template/header', $data);
                 $this->load->view('template/navbar');
-                $this->load->view('linkage/linkages_create', $data);
+                $this->load->view('linkage/users_create', $data);
                 $this->load->view('template/footer');
 
             }else{
@@ -87,7 +87,7 @@
     	}
 
     	function delete(){
-			$this->linkages_model->delete();
+			$this->users_model->delete();
 			$this->index();
     	}
 
@@ -102,7 +102,7 @@
 				$data['single_linkage'] = $this->linkages_model->show_linkage($id);
 				$this->load->view('template/header', $data);
 	            $this->load->view('template/navbar');
-	            $this->load->view('linkage/linkages_update', $data);
+	            $this->load->view('linkage/users_update', $data);
 	            $this->load->view('template/footer');
 	         }else{
 		        //If no session, redirect to login page
@@ -111,7 +111,7 @@
 		}
 
 		function update_linkage() {
-			$id= $this->input->post('linkages_id');
+			$id= $this->input->post('users_id');
 			$data = array(
 				'company_name'=>$this->input->post('company_name'),
 				'company_tel_no'=>$this->input->post('company_tel_no'),

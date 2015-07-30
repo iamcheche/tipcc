@@ -14,7 +14,7 @@ class Registration extends CI_Controller {
 	}
 	
 	public function index(){
-		$this->load->view('login_view');
+		$this->load->view('login-signup/login_view');
  	}
 	
 	public function registered(){

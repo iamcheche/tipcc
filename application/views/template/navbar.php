@@ -18,10 +18,12 @@
         <li><a href="<?php echo base_url('index.php/linkages'); ?>" >Linkages Management</a></li>
         <li><a href="" >Users Management</a></li>
         <li><a href="<?php echo base_url('index.php/email')?>" >Blast Emails</a></li>
-        </ul>
+      </ul>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li> <h4 style="margin-top: 6.5%; color: #ffdb19;">Howdy, <?php echo $username; ?>! | <a href = "<?php echo base_url('index.php/logout');?>" style="color: #c0c0c0">Logout</a></h4></li>
-          </ul>
+        <li></li>
+        <li> <h4 style="margin-top: 6.5%; color: #ffdb19;"> <a href = ""><?php echo img(array('src'=>'img/settings.png',  'width' => '22', 'height' => '22')); ?> </a>Howdy, <?php echo $username; ?>! | <a href = "<?php echo base_url('index.php/logout');?>" style="color: #c0c0c0">Logout</a></h4></li>
+        </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

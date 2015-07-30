@@ -5,11 +5,11 @@
         function __construct(){
             parent::__construct();
             $this->load->library('pagination');
-            $this->load->database();
             $this->load->library('session');
             $this->load->helper('url');
             $this->load->helper('form');
             $this->load->library('form_validation');
+            $this->load->library('upload');            
         }
 
         function index(){
@@ -19,7 +19,7 @@
                 $data['title'] = 'TIP Career Center';
                 $this->load->view('template/header', $data);
                 $this->load->view('template/navbar', $data);
-                $this->load->view('email_view');
+                $this->load->view('email/email_view');
                 $this->load->view('template/footer');
             }else{
              //If no session, redirect to login page
@@ -27,9 +27,13 @@
             }
         }
 
-        function sendtoall(){
-            
+        function template(){
+            $this->load->view('email/email_template', $data);
+            $data['template'] = $this -> sendtoall($body);
 
+        }
+
+        function sendtoall($body = ''){  
             $rules = array(
                 array('field'=>'subject','rules'=>'required'),
                 array('field'=>'message','rules'=>'required')
@@ -41,7 +45,7 @@
             if ($this->form_validation->run() == true){   
                 $config = array(
                     'protocol' => 'smtp' ,
-                    'mailtype' => 'text',
+                    'mailtype' => 'html',
                     'smtp_host' => 'smtp.gmail.com',
                     'smtp_port' => 465,
                     'smtp_user' => 'eblast.noreply@gmail.com',
@@ -53,21 +57,22 @@
                 $this->email->set_newline("\r\n");
 
                 $subject = $this->input->post('subject');
-                $message = $this->input->post('message');                
+                $body = $this->input->post('message');
                 
                 $this->db->select('contact_email');
                 $to = $this->db->get('linkages')->result_array();
                 
-                $recipient = array();     
-
+                $recipient = array();
+                
                 foreach($to as $key => $value){
                     $recipient[] = $value['contact_email'];
-                }
+                }                
 
+                $msg = $this->load->view('email/email_template', '', TRUE);
                 $this->email->from('eblast.noreply@gmail.com', 'Email Blast Tester');
                 $this->email->to($recipient);
                 $this->email->subject($subject);
-                $this->email->message($message);
+                $this->email->message($msg);
 
                 if ($this->email->send()){
                     if($this->session->userdata('logged_in')){
@@ -76,7 +81,7 @@
                         $data['title'] = 'TIP Career Center';
                         $this->load->view('template/header', $data);
                         $this->load->view('template/navbar', $data);
-                        $this->load->view('email_success');
+                        $this->load->view('email/email_template');
                         $this->load->view('template/footer');
                     }else{
                      //If no session, redirect to login page

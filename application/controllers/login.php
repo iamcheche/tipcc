@@ -20,7 +20,7 @@ class Login extends CI_Controller {
         	$data['title'] = 'TIP Career Center';
 			$this->load->view('/template/login_header', $data);
 			$this->load->view('/template/login_navbar', $data);
-			$this->load->view('login_view');
+			$this->load->view('login-signup/login_view');
 			$this->load->view('/template/login_footer');
         }
 	}	
