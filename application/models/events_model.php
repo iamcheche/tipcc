@@ -65,6 +65,13 @@
 			$result = $query->result();
 			return $result;
 		}
+
+		function search_event(){
+			$match = $this->input->post('search_event');
+			$this->db->like('event_date',$match);
+  			$records = $this->db->get('events');
+  			return $records->result();
+		}
     }
 
 ?>

@@ -66,6 +66,72 @@
 				<?php else : ?>
 					<h1> NO SCHEDULED EVENTS TODAY</h1> 
 				<?php endif; ?>
+
+					<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">SEARCH/UPDATE AN EVENT</h2>
+					<div id = "crud_form">
+						<div class = "row">
+							<?php
+								$search_event = array('type'=>'date', 'id' => 'search', 'name' => 'search_event', 'placeholder' => date('20y-m-d'), 'readonly' => true, 'style' => 'width:100%' );
+							?>
+							
+							<?php 
+
+								echo form_open('index.php/home/search_event');
+								echo '<div class = "col-md-6">';
+								echo form_input($search_event);
+								echo '</div>';
+								echo '<div class = "col-md-6">';
+								echo form_submit('submit', 'SEARCH EVENT');
+								echo '</div>';
+								echo '<br><br>';
+								echo form_close();
+
+							?>
+						</div>
+						
+					</div>
+
+					<div class =  "table-reponsive">
+					<table style="width:100%; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th colspan = "5" style = "text-align:center;width:100%;">Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(isset($event)) : foreach ($event as $row) : ?>
+                                <tr>
+                                	<td style = "width:10%"><?php echo $row->event_id ?></td>
+                                	<td style = "width:40%"> <?php echo $row->event_date ?></td>
+                                    <td style = "width:40%"><?php echo $row->event_name ?></td>
+                                    <td style = "width:10%">
+                                    	<a href="#openDelete">Delete</a> 
+                                    	<div id="openDelete" class="modalDialog">
+                                                <div>
+                                                    <a href="<?php echo base_url() ?>" title="Close" class="close">X</a>
+                                                    <div id = "register_form">
+                                                        <br>
+                                                        Are you sure you want to <em>DELETE</em> this record?<br>
+                                                        <?php
+                                                            echo form_open('index.php/home/delete/' . $row->event_id);
+                                                            echo form_submit('submit', 'Yes! I am 100% sure!');
+                                                            echo form_close();
+                                                        ?>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </td>
+                                    <td style = "width:10%"><?php echo anchor("index.php/home/update_event/$row->event_id", 'Edit'); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+				</div>
+				<?php else : ?>
+					<h1> NO SCHEDULED EVENTS ON THAT DAY</h1> 
+				<?php endif; ?>					
+
 	</div>
 
 	<div class = "col-md-7" style = "text-align:center;">

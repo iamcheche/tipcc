@@ -111,5 +111,41 @@
             $this->events_model->update_event($id,$data);
             $this->show_event();
         }
+
+        function search_event($year = null, $month = null){
+            if (!$year) {
+                $year = date('Y');
+            }
+            
+            if (!$month) {
+                $month = date('m');
+            }
+
+            if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+                $data['calendar'] = $this->events_model->generate_calendar($year, $month); 
+                $data['year'] = $this->uri->segment(3);
+                $data['month'] = $this->uri->segment(4);
+
+                if ($query = $this->events_model->view()){
+                    $data['records'] = $query;
+                }   
+                
+                if ($query = $this->events_model->search_event()){
+                    $data['event'] = $query;
+                }   
+                
+                $this->load->view('template/header', $data);
+                $this->load->view('template/navbar');
+                $this->load->view('home/home_view', $data);
+                $this->load->view('template/footer');                
+            }else{
+             //If no session, redirect to login page
+             redirect('', 'refresh');
+            }              
+        }
     }
 ?>

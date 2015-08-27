@@ -30,7 +30,7 @@
                                     echo '<div id = "error">' . form_error('event_name') . '</div>';
                                     echo '<br /><br />';
 
-                              echo form_submit('submit', 'Update A Linkage');
+                              echo form_submit('submit', 'Update Event');
                               echo '<br /><br />';
                               echo form_close();                          
                     ?>
