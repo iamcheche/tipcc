@@ -1,5 +1,6 @@
 <div id = "container"> 
-	<div class = "col-md-5">
+	<div class  ="col-md-1"></div>
+	<div class  = "col-md-10">
 		<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">CREATE AN EVENT</h2>
 		<div class = "row">
 			<div class = "col-md-12">
@@ -26,6 +27,7 @@
 				</div>
 			</div>
 		</div>	
+
 			<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">TODAY'S EVENTS (<?php echo date('m-d-20y'); ?>)</h2>
 				<div class =  "table-reponsive">
 					<table style="width:100%; text-align:center;">
@@ -71,7 +73,7 @@
 					<div id = "crud_form">
 						<div class = "row">
 							<?php
-								$search_event = array('type'=>'date', 'id' => 'search', 'name' => 'search_event', 'placeholder' => date('20y-m-d'), 'readonly' => true, 'style' => 'width:100%' );
+								$search_event = array('type'=>'date', 'id' => 'search', 'name' => 'search_event', 'value' => date('20y-m-d'), 'readonly' => true, 'style' => 'width:100%' );
 							?>
 							
 							<?php 
@@ -101,9 +103,9 @@
                         <tbody>
                             <?php if(isset($event)) : foreach ($event as $row) : ?>
                                 <tr>
-                                	<td style = "width:10%"><?php echo $row->event_id ?></td>
-                                	<td style = "width:40%"> <?php echo $row->event_date ?></td>
-                                    <td style = "width:40%"><?php echo $row->event_name ?></td>
+                                	<td style = "width:5%"><?php echo $row->event_id ?></td>
+                                	<td style = "width:15%"> <?php echo $row->event_date ?></td>
+                                    <td style = "width:60%"><?php echo $row->event_name ?></td>
                                     <td style = "width:10%">
                                     	<a href="#openDelete">Delete</a> 
                                     	<div id="openDelete" class="modalDialog">
@@ -131,13 +133,12 @@
 				<?php else : ?>
 					<h1> NO SCHEDULED EVENTS ON THAT DAY</h1> 
 				<?php endif; ?>					
-
-	</div>
-
-	<div class = "col-md-7" style = "text-align:center;">
+		<br><br>
+		<H2 style = "background-color:#363636; color: #fbde43;">EVENTS CALENDAR</H2>
+			
 		<?php
-			echo '<H2 style = "background-color:#363636; color: #fbde43">EVENTS CALENDAR</H2>';
 			echo $calendar;                
 		?>
 	</div>
+	<div class = "col-md-1" style = "margin-bottom:2%;"></div>
 </div>
