@@ -111,10 +111,5 @@
             $this->events_model->update_event($id,$data);
             $this->show_event();
         }
-
-        function search_event(){
-                $data['records'] = $this->events_model->search_event();
-                redirect('index.php/home', 'refresh');        
-        }
     }
 ?>
