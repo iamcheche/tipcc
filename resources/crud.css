@@ -2,6 +2,7 @@
     color:#191919; 
     background-color: #fff;
     width: 80%;
+    border: 1px solid #f0f0f0;
     text-align: center;
     display: inline-block;
 }
@@ -22,12 +23,19 @@ width: 20%;
 }
 
 #crud_form input[type='submit']{
-    background-color: #191919;
+    background-color: #363636;
     color: #ffdb19;
     width: 80%;
+    border: 1px solid #363636;
+    box-shadow: 2px 1px 5px #191919
 }
 
 #crud_form textarea{
+    width: 80%;
+    display: inline-block;
+}
+
+#crud_form select{
     width: 80%;
     display: inline-block;
 }

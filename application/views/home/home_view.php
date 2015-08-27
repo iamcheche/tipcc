@@ -1,11 +1,77 @@
 <div id = "container"> 
-    <div class="row">
-        <div class="col-md-3">
-        	
-        </div>
-        <div class="col-md-9">
-        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-        	<br />ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-	</div>   
+	<div class = "col-md-5">
+		<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">CREATE AN EVENT</h2>
+		<div class = "row">
+			<div class = "col-md-12">
+				<div id = "crud_form">
+					
+					<?php
+						$event_date = array('type'=>'date', 'id' => 'example1', 'name' => 'event_date', 'value' => date('20y-m-d'), 'readonly' => true );
+						$event_name = array('id' => 'event_name', 'name'=> 'event_name', 'placeholder' => 'Enter your event here', 'rows' => 3, 'style' => 'border: 1px solid #f0f0f0;');
+					?>
+					
+					<?php 
+						echo form_open('index.php/home/add_event');
+						echo form_input($event_date);
+						echo '<br><br>';
+						
+						echo form_textarea($event_name);
+						echo '<br><br>';
+						
+						echo form_submit('submit', 'Add This Event');
+						echo '<br><br>';
+						echo form_close();
+
+					?>
+				</div>
+			</div>
+		</div>	
+			<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">TODAY'S EVENTS (<?php echo date('m-d-20y'); ?>)</h2>
+				<div class =  "table-reponsive">
+					<table style="width:100%; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th colspan = "4" style = "text-align:center;width:100%;">Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(isset($records)) : foreach ($records as $row) : ?>
+                                <tr>
+                                	<td style = "width:10%"><?php echo $row->event_id ?></td>
+                                    <td style = "width:70%"><?php echo $row->event_name ?></td>
+                                    <td style = "width:10%">
+                                    	<a href="#openDelete">Delete</a> 
+                                    	<div id="openDelete" class="modalDialog">
+                                                <div>
+                                                    <a href="<?php echo base_url() ?>" title="Close" class="close">X</a>
+                                                    <div id = "register_form">
+                                                        <br>
+                                                        Are you sure you want to <em>DELETE</em> this record?<br>
+                                                        <?php
+                                                            echo form_open('index.php/home/delete/' . $row->event_id);
+                                                            echo form_submit('submit', 'Yes! I am 100% sure!');
+                                                            echo form_close();
+                                                        ?>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </td>
+                                    <td style = "width:10%"><?php echo anchor("index.php/home/update_event/$row->event_id", 'Edit'); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+				</div>
+				<?php else : ?>
+					<h1> NO SCHEDULED EVENTS TODAY</h1> 
+				<?php endif; ?>
+	</div>
+
+	<div class = "col-md-7" style = "text-align:center;">
+		<?php
+			echo '<H2 style = "background-color:#363636; color: #fbde43">EVENTS CALENDAR</H2>';
+			echo $calendar;                
+		?>
+	</div>
 </div>

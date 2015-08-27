@@ -1,12 +1,14 @@
 body{
-	background-color: #ffcc00;
-	width: 100%;
+	background-color: #fbde43;
 	margin: 0;
 }
 
+nav{
+	z-index: 1;
+}
+
 .navbar{
-	background-color: #191919;
-	border: 1px solid #c0c0c0;
+	background-color: #363636;
 	width: 100%;
 }
 
@@ -15,18 +17,37 @@ body{
 	color: #191919;
 }
 
-input{
-	background-color: #ffdb19;
-	color:	 #191919;
+.navbar-brand:hover {
+	color: #c0c0c0;
 }
-
-a .navbar-brand{
-	color:#ffdb19;
- }
-
- a:hover{
- 	color: #c0c0c0;
- }
  ul{
  	color:#c0c0c0;
  }
+
+ table {
+ 	padding: 0 !important;
+	margin-right: 0;
+	margin-left: 0; 	
+ }
+
+ .container{
+	padding-left: 0 !important;
+ 	padding-right: 0 !important;
+ 	margin-left: auto !important;
+ 	margin-right: auto !important;
+ 	width: 92%;
+ }
+
+h2 {
+	font-family: Arial Narrow;
+	text-decoration: underline;
+}
+
+.col-md-12{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+li:hover{
+	color: #808080;
+}

@@ -35,8 +35,8 @@ class CI_Calendar {
 	var $template		= '';
 	var $start_day		= 'sunday';
 	var $month_type		= 'long';
-	var $day_type		= 'abr';
-	var $show_next_prev	= FALSE;
+	var $day_type		= 'short';
+	var $show_next_prev	= true;
 	var $next_prev_url	= '';
 
 	/**
@@ -406,23 +406,23 @@ class CI_Calendar {
 	function default_template()
 	{
 		return  array (
-						'table_open'				=> '<table border="0" cellpadding="4" cellspacing="0">',
+						'table_open'				=> '<table class = "calendar">',
 						'heading_row_start'			=> '<tr>',
-						'heading_previous_cell'		=> '<th><a href="{previous_url}">&lt;&lt;</a></th>',
-						'heading_title_cell'		=> '<th colspan="{colspan}">{heading}</th>',
-						'heading_next_cell'			=> '<th><a href="{next_url}">&gt;&gt;</a></th>',
+						'heading_previous_cell'		=> '<th><h1><a href="{previous_url}">&lt;&lt;</a></h1></th>',
+						'heading_title_cell'		=> '<th colspan="{colspan}"><h3>{heading}</h3></th>',
+						'heading_next_cell'			=> '<th><h1><a href="{next_url}">&gt;&gt;</a></h1></th>',
 						'heading_row_end'			=> '</tr>',
 						'week_row_start'			=> '<tr>',
-						'week_day_cell'				=> '<td>{week_day}</td>',
+						'week_day_cell'				=> '<th><h4>{week_day}</h4></th>',
 						'week_row_end'				=> '</tr>',
 						'cal_row_start'				=> '<tr>',
 						'cal_cell_start'			=> '<td>',
 						'cal_cell_start_today'		=> '<td>',
-						'cal_cell_content'			=> '<a href="{content}">{day}</a>',
-						'cal_cell_content_today'	=> '<a href="{content}"><strong>{day}</strong></a>',
-						'cal_cell_no_content'		=> '{day}',
-						'cal_cell_no_content_today'	=> '<strong>{day}</strong>',
-						'cal_cell_blank'			=> '&nbsp;',
+						'cal_cell_content'			=> '<p class = "calendar">{day}</p> <br> {content} ',
+						'cal_cell_content_today'	=> '<strong ><p>{day}</p></strong><br>{content}',
+						'cal_cell_no_content'		=> '<p class = "calendar">{day}</p>',
+						'cal_cell_no_content_today'	=> '<strong><p >{day}</p></strong><br> No Scheduled Events Today',
+						'cal_cell_blank'			=> '<br>',
 						'cal_cell_end'				=> '</td>',
 						'cal_cell_end_today'		=> '</td>',
 						'cal_row_end'				=> '</tr>',

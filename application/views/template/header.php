@@ -3,11 +3,13 @@
     <head>
         <?php echo link_tag('resources/crud.css')?>
         <?php echo link_tag('resources/table.css')?>
+        <?php echo link_tag('resources/search.css')?>
+        <?php echo link_tag(base_url() . 'resources/login-footer.css')?>
+        <?php echo link_tag(base_url() . 'resources/calendar.css')?>
+        <?php echo link_tag(base_url() . 'resources/login.css')?>
         <?php echo link_tag('assets/css/bootstrap.min.css')?>
         <?php echo link_tag('assets/css/custom.css')?>
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>js/linkage-validation.js"></script>
+        <?php echo link_tag('assets/css/datepicker.css')?> 
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

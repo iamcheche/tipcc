@@ -1,0 +1,65 @@
+
+.calendar {
+    font-family: Arial, Verdana, Sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th{
+    background-color: #363636;
+    text-align: center;
+}
+.calendar tbody tr:first-child th {
+    color: #fbde43;
+    margin: 0 0 10px 0;
+}
+
+.day_header {
+    font-weight: normal;
+    text-align: center;
+    color: #757575;
+}
+
+.calendar td {
+    width: 14.28%; /* Force all cells to be about the same width regardless of content */
+    border:1px solid #CCC;
+    height: 60px;
+    vertical-align: top;
+    font-size: 10px;
+    padding: 0;
+}
+
+/*.calendar td:hover p {
+    background: #363636;
+    color: #fbde43;
+}
+
+.calendar td:hover {
+    background: #363636;
+    color: #fbde43;
+}*/
+
+.day_listing {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #2C2C2C;
+    padding: 5px 5px 0 0;
+    font-weight: bolder;
+}
+
+.calendar p {
+    text-align: right;
+}
+
+
+/*.calendar p:hover{
+    color:#fbde43;
+    text-align: right;
+}*/
+
+div.today {
+    background: #E9EFF7;
+    height: 100%;
+} 
+

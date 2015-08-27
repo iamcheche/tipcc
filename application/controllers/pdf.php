@@ -52,11 +52,65 @@ class Pdf extends CI_Controller{
 			'grad_employability' => 'Graduate Employability'
 		);
 
-		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>800));
+		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>975));
 		$this->cezpdf->ezStream();
 		
 	}
 
+	function user(){	
+		prep_pdf(); // creates the footer for the document we are creating.
+
+		//$query = $this->pdf_model->get_linkages();
+		$query =  $this->db->query('SELECT * FROM users');
+		$data_table = array();
+		foreach ($query->result_array() as $row) {
+				$data_table[] = $row;
+			}	
+		
+		$title = 'List of Users';
+
+		$column_header=array(
+			'user_id' => 'User ID',
+			'username' => 'Username',
+			'password' => 'Password',
+			'c_password' => 'Confirm Password',
+			'first_name' => 'First Name',
+			'middle_initial' => 'Middle Initial',
+			'last_name' => 'Last Name',
+			'email_address' => 'Email Address',
+			'contact_number' => 'Contact Number',
+			'role' => 'Role',
+			'date_created' => 'Date Created'
+		);
+
+		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>975));
+		$this->cezpdf->ezStream();
+		
+	}
+
+	function email_history(){	
+		prep_pdf(); // creates the footer for the document we are creating.
+
+		//$query = $this->pdf_model->get_linkages();
+		$query =  $this->db->query('SELECT * FROM email_history');
+		$data_table = array();
+		foreach ($query->result_array() as $row) {
+				$data_table[] = $row;
+			}	
+		
+		$title = 'Email History';
+
+		$column_header=array(
+			'email_id' => 'Email ID',
+			'subject' => 'Email Subject',
+			'message' => 'Email Message(Body)',
+			'email_sent' => 'Email Timestamp'
+		);
+
+		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>975));
+		$this->cezpdf->ezStream();
+		
+	}
 }
 
 ?>

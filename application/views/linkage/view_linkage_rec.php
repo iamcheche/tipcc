@@ -1,9 +1,6 @@
 <div id = "container">	
 	<div class = "row">
 		<div class = "col-md-12" style="background-color:#191919;color:#ffdb19;text-align:center; ">
-			<div id = "error">
-    			<?php echo validation_errors(); ?>
-    		</div>
 			<h1>RECORD VIEWER</h1>
 		</div>
 	</div>

@@ -1,37 +1,36 @@
-input{
+
+#register_form input{
 padding:3px;
 color:#191919;
-border:1px solid #cccccc;
+background-color: #fff;
+border:1px solid #c0c0c0;
 margin-top:2px;
-width:150px;
+width:60%;
+text-align: center;
 font-size:11px;
-}
-
-#register_form{
-    width: 90%;
-    float:left;
-    color: #ffdb19;
-    margin:1%;
-    padding: 1%;
-    border: 1px solid #cccccc;
-    background-color: #191919;
-    box-shadow: 1px 3px 5px #cccccc;
-    text-align: center; 
 }
 
 #register_form label{
 font-weight: bold;
 float: left;
+text-align: left;
 width: 40%; 
-color: #ffdb19;
+color: #191919;
+}
+
+#register_form{
+    background-color: #fbde43;
+    width: 100%;
 }
 
 #register_form input[type='submit']{
-    background-color: #ffdb19;
-    color: #191919;
-
+    background-color: #363636;
+    color: #fbde43;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #191919;
+    border: 1px solid #191919;
 }
 
 #error{
-    color: #ff3232;
+    color:#ff3232;
 }

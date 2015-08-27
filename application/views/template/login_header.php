@@ -5,16 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <?php echo link_tag('resources/login.css')?>
-        <?php echo link_tag('resources/carousel.css')?>
-        <?php echo link_tag('assets/css/bootstrap.min.css')?>
-        <?php echo link_tag('assets/css/custom.css')?>
-        
+        <?php echo link_tag(base_url() . 'resources/login.css')?>
+        <?php echo link_tag(base_url() . 'assets/css/bootstrap.min.css')?>
+        <?php echo link_tag(base_url() . 'assets/css/custom.css')?>
+        <?php echo link_tag(base_url() . 'resources/login-footer.css')?>
+        <?php echo link_tag(base_url() . 'resources/slideshow.css')?>
+
         <!--Make sure page contains valid doctype at the very top!-->
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/carousel.js"></script>
-        <script type="text/javascript" src = "js/setup.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>js/carousel.js"></script>
+        <script type="text/javascript" src = "<?php echo base_url();?>js/setup.js"></script>
+        <script type="text/javascript" src = "<?php echo base_url();?>js/modernizr.custom.86080.js"></script>
         
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title><?php echo $title ?></title>

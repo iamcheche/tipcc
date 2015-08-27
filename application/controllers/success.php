@@ -7,7 +7,7 @@ class Success extends CI_Controller {
 	}
 
 	function index(){
-		$this->load->view('success_view');
+		$this->load->view('login-signup/success_view');
 	}
 
 }

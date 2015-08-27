@@ -10,6 +10,8 @@
 			$this->load->model('linkages_model');
 			$this->load->helper('url');
 			$this->load->helper('form');
+			$this->load->dbutil();
+	        $this->load->helper('download');
     	}
 
     	function index(){
@@ -21,17 +23,10 @@
 	            $this->load->view('template/navbar');
 	            $this->load->view('template/footer');
 	            
-	          	/*$linkage_result = $this->linkages_model->view();           
-	          	$data['linkresult'] = $linkage_result;
-	          	//load the department_view
-	          	$this->load->view('linkages_view',$data);*/
-
 	          	if ($query = $this->linkages_model->view()){
 	          		$data['records'] = $query;
 	          	}   
-		        
-		        $this->load->view('linkage/linkages_view', $data);
-		    
+		        $this->load->view('linkage/linkages_view', $data);		    
 		    }else{
 		         	//If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
 		         	redirect('', 'refresh');
@@ -79,7 +74,19 @@
 			
 			$this->form_validation->set_rules($rules);
 				if($this->form_validation->run() == FALSE){
-					redirect('index.php/linkages/create');
+					if($this->session->userdata('logged_in')){
+		                $session_data = $this->session->userdata('logged_in');
+		                $data['username'] = $session_data['username'];
+		                $data['title'] = 'TIP Career Center';
+		                $this->load->view('template/header', $data);
+		                $this->load->view('template/navbar');
+		                $this->load->view('linkage/linkages_create', $data);
+		                $this->load->view('template/footer');
+
+		            }else{
+				        //If no session, redirect to login page
+			            redirect('', 'refresh');
+		            }
 				}else{
 					$this->linkages_model->create();
 					redirect('index.php/success', 'refresh');
@@ -133,8 +140,8 @@
 				'slo'=>$this->input->post('slo'),
 				'grad_employability'=>$this->input->post('grad_employability')
 			);
-		$this->linkages_model->update_linkage($id,$data);
-		$this->show_linkage();
+			$this->linkages_model->update_linkage($id,$data);
+			$this->show_linkage();
 		}
 
 		function show_view_linkage() {
@@ -179,8 +186,35 @@
 				'slo'=>$this->input->post('slo'),
 				'grad_employability'=>$this->input->post('grad_employability')
 			);
-		$this->linkages_model->view_linkage($id,$data);
-		$this->show_view_linkage();
+
+			$this->linkages_model->view_linkage($id,$data);
+			$this->show_view_linkage();
+		}
+
+		function csv($query, $filename = 'CSV_Report_Linkages.csv'){
+	        $delimiter = ",";
+	        $newline = "rn";
+	        $query = $this->db->query("select * from linkages");
+	        $data = $this->dbutil->csv_from_result($query, $delimiter, $newline);
+	        force_download($filename, $data);
+    	}
+		
+		function search_linkage(){
+			if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+           		$data['records'] = $this->linkages_model->get_linkage();
+				
+				$this->load->view('template/header', $data);
+	            $this->load->view('template/navbar');
+				$this->load->view('linkage/linkages_view', $data);	            
+				$this->load->view('template/footer');
+	         
+	         }else{
+		        //If no session, redirect to login page
+	             redirect('', 'refresh');
+            }
 		}
 	} 
 ?> 

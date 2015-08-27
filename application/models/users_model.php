@@ -40,7 +40,7 @@
 		}
 
 		// Function To Fetch Selected Student Record
-		function show_users($data){
+		function show_user($data){
 			$this->db->select('*');
 			$this->db->from('users');
 			$this->db->where('user_id', $data);
@@ -50,7 +50,7 @@
 		}
 		
 		// Update Query For Selected Student
-		function update_users($id,$data){
+		function update_user($id,$data){
 			$this->db->where('user_id', $id, $this->uri->segment(3));
 			$this->db->update('users', $data);
 		}
@@ -69,6 +69,20 @@
 		function view_user($id,$data){
 			$this->db->where('user_id', $id, $this->uri->segment(3));
 			$this->db->update('users', $data);
+		}
+
+		function get_user(){
+			$match = $this->input->post('search');
+			$this->db->like('user_id',$match);
+  			$this->db->or_like('username',$match);
+  			$this->db->or_like('first_name',$match);
+  			$this->db->or_like('last_name',$match);
+  			$this->db->or_like('contact_number', $match);
+  			$this->db->or_like('email_address', $match);  			
+  			$this->db->or_like('role', $match);
+  			$this->db->or_like('date_created', $match);
+  			$records = $this->db->get('users');
+  			return $records->result();
 		}
 	}
 ?>

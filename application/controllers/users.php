@@ -10,6 +10,8 @@
 			$this->load->model('users_model');
 			$this->load->helper('url');
 			$this->load->helper('form');
+			$this->load->dbutil();
+	        $this->load->helper('download');
     	}
 
     	function index(){
@@ -30,7 +32,7 @@
 	          		$data['records'] = $query;
 	          	}   
 		        
-		        $this->load->view('users/users_view', $data);
+		        $this->load->view('user/user_view', $data);
 		    
 		    }else{
 		         	//If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
@@ -45,7 +47,7 @@
                 $data['title'] = 'TIP Career Center';
                 $this->load->view('template/header', $data);
                 $this->load->view('template/navbar');
-                $this->load->view('linkage/users_create', $data);
+                $this->load->view('user/users_create', $data);
                 $this->load->view('template/footer');
 
             }else{
@@ -88,21 +90,21 @@
 
     	function delete(){
 			$this->users_model->delete();
-			$this->index();
+			redirect( 'index.php/users', 'refresh');
     	}
 
-    	function show_linkage() {
+    	function show_user() {
 			if($this->session->userdata('logged_in')){
                 $session_data = $this->session->userdata('logged_in');
                 $data['username'] = $session_data['username'];
                 $data['title'] = 'TIP Career Center';
            
 				$id = $this->uri->segment(3);
-				$data['linkage'] = $this->linkages_model->view();
-				$data['single_linkage'] = $this->linkages_model->show_linkage($id);
+				$data['users'] = $this->users_model->view();
+				$data['single_user'] = $this->users_model->show_user($id);
 				$this->load->view('template/header', $data);
 	            $this->load->view('template/navbar');
-	            $this->load->view('linkage/users_update', $data);
+	            $this->load->view('user/user_update', $data);
 	            $this->load->view('template/footer');
 	         }else{
 		        //If no session, redirect to login page
@@ -110,45 +112,36 @@
             } 
 		}
 
-		function update_linkage() {
-			$id= $this->input->post('users_id');
+		function update_user() {
+			$id= $this->input->post('user_id');
 			$data = array(
-				'company_name'=>$this->input->post('company_name'),
-				'company_tel_no'=>$this->input->post('company_tel_no'),
-				'address_no'=>$this->input->post('address_no'),
-				'street_address'=>$this->input->post('street_address'),
-				'city_address'=>$this->input->post('city_address'),
-				'region'=>$this->input->post('region'),
-				'zip'=>$this->input->post('zip'),
-				'contact_fname'=>$this->input->post('contact_fname'),
-				'contact_mi'=>$this->input->post('contact_mi'),
-				'contact_lname'=>$this->input->post('contact_lname'),
-				'contact_position'=>$this->input->post('contact_position'),
-				'contact_email'=>$this->input->post('contact_email'),
+				'username'=>$this->input->post('username'),
+				'password'=>$this->input->post('password'),
+				'c_password'=>$this->input->post('c_password'),
+				'first_name'=>$this->input->post('first_name'),
+				'middle_initial'=>$this->input->post('middle_initial'),
+				'last_name'=>$this->input->post('last_name'),
+				'email_address'=>$this->input->post('email_address'),
 				'contact_number'=>$this->input->post('contact_number'),
-				'sy_start'=>$this->input->post('sy_start'),
-				'sy_end'=>$this->input->post('sy_end'),
-				'program_supported'=>$this->input->post('program_supported'),
-				'brief_desc'=>$this->input->post('brief_desc'),
-				'slo'=>$this->input->post('slo'),
-				'grad_employability'=>$this->input->post('grad_employability')
+				'role'=>$this->input->post('role'),
+				'date_created'=>$this->input->post('date_created')
 			);
-		$this->linkages_model->update_linkage($id,$data);
-		$this->show_linkage();
+			$this->users_model->update_user($id,$data);
+			$this->show_user();
 		}
 
-		function show_view_linkage() {
+		function show_view_user() {
 			if($this->session->userdata('logged_in')){
                 $session_data = $this->session->userdata('logged_in');
                 $data['username'] = $session_data['username'];
                 $data['title'] = 'TIP Career Center';
            
 				$id = $this->uri->segment(3);
-				$data['linkage'] = $this->linkages_model->view();
-				$data['single_linkage'] = $this->linkages_model->show_linkage_rec($id);
+				$data['users'] = $this->users_model->view();
+				$data['single_user'] = $this->users_model->show_user_rec($id);
 				$this->load->view('template/header', $data);
 	            $this->load->view('template/navbar');
-	            $this->load->view('linkage/view_linkage_rec', $data);
+	            $this->load->view('user/view_user', $data);
 	            $this->load->view('template/footer');
 	         }else{
 		        //If no session, redirect to login page
@@ -156,31 +149,48 @@
             } 
 		}
 		
-		function view_linkage() {
-			$id= $this->input->post('linkages_id');
+		function view_user() {
+			$id= $this->input->post('user_id');
 			$data = array(
-				'company_name'=>$this->input->post('company_name'),
-				'company_tel_no'=>$this->input->post('company_tel_no'),
-				'address_no'=>$this->input->post('address_no'),
-				'street_address'=>$this->input->post('street_address'),
-				'city_address'=>$this->input->post('city_address'),
-				'region'=>$this->input->post('region'),
-				'zip'=>$this->input->post('zip'),
-				'contact_fname'=>$this->input->post('contact_fname'),
-				'contact_mi'=>$this->input->post('contact_mi'),
-				'contact_lname'=>$this->input->post('contact_lname'),
-				'contact_position'=>$this->input->post('contact_position'),
-				'contact_email'=>$this->input->post('contact_email'),
+				'username'=>$this->input->post('username'),
+				'password'=>$this->input->post('password'),
+				'c_password'=>$this->input->post('c_password'),
+				'first_name'=>$this->input->post('first_name'),
+				'middle_initial'=>$this->input->post('middle_initial'),
+				'last_name'=>$this->input->post('last_name'),
+				'email_address'=>$this->input->post('email_address'),
 				'contact_number'=>$this->input->post('contact_number'),
-				'sy_start'=>$this->input->post('sy_start'),
-				'sy_end'=>$this->input->post('sy_end'),
-				'program_supported'=>$this->input->post('program_supported'),
-				'brief_desc'=>$this->input->post('brief_desc'),
-				'slo'=>$this->input->post('slo'),
-				'grad_employability'=>$this->input->post('grad_employability')
+				'role'=>$this->input->post('role'),
+				'date_created'=>$this->input->post('date_created')
 			);
-		$this->linkages_model->view_linkage($id,$data);
-		$this->show_view_linkage();
+		$this->users_model->view_user($id,$data);
+		$this->show_view_user();
 		}
+
+		function csv($query, $filename = 'CSV_Report_Users.csv'){
+	        $delimiter = ",";
+	        $newline = "rn";
+	        $query = $this->db->query("select * from users");
+	        $data = $this->dbutil->csv_from_result($query, $delimiter, $newline);
+	        force_download($filename, $data);
+    	}
+
+    	function search_user(){
+			if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+           		$data['records'] = $this->users_model->get_user();
+				
+				$this->load->view('template/header', $data);
+	            $this->load->view('template/navbar');
+				$this->load->view('user/user_view', $data);	            
+				$this->load->view('template/footer');
+	         }else{
+		        //If no session, redirect to login page
+	             redirect('', 'refresh');
+            }
+		}
+
 	} 
 ?> 

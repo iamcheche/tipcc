@@ -18,14 +18,14 @@ class Cezpdf extends Cpdf {
 // Wayne Munro, R&OS Ltd, http://www.ros.co.nz/pdf
 //==============================================================================
 
-var $ez=array('fontSize'=>10); // used for storing most of the page configuration parameters
+var $ez=array('fontSize'=>8); // used for storing most of the page configuration parameters
 var $y; // this is the current vertical positon on the page of the writing point, very important
 var $ezPages=array(); // keep an array of the ids of the pages, making it easy to go back and add page numbers etc.
 var $ezPageCount=0;
 
 // ------------------------------------------------------------------------------
 
-function Cezpdf($paper='a4',$orientation='landscape'){
+function Cezpdf($paper='LEGAL',$orientation='landscape'){
 	// Assuming that people don't want to specify the paper size using the absolute coordinates
 	// allow a couple of options:
 	// orientation can be 'portrait' or 'landscape'
