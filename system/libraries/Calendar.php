@@ -406,7 +406,7 @@ class CI_Calendar {
 	function default_template()
 	{
 		return  array (
-						'table_open'				=> '<table class = "calendar">',
+						'table_open'				=> '<div class = "table-responsive"><table class = "calendar">',
 						'heading_row_start'			=> '<tr>',
 						'heading_previous_cell'		=> '<th><h1><a href="{previous_url}">&lt;&lt;</a></h1></th>',
 						'heading_title_cell'		=> '<th colspan="{colspan}"><h3>{heading}</h3></th>',
@@ -426,7 +426,7 @@ class CI_Calendar {
 						'cal_cell_end'				=> '</td>',
 						'cal_cell_end_today'		=> '</td>',
 						'cal_row_end'				=> '</tr>',
-						'table_close'				=> '</table>'
+						'table_close'				=> '</table></div>'
 					);
 	}
 
