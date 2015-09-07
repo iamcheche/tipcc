@@ -213,6 +213,14 @@
             $this->email_model->delete();
             $this->index();
         }
+        
+        function csv($query = null, $filename = 'CSV_Report_History.csv'){
+            $delimiter = ",";
+            $newline = "rn";
+            $query = $this->db->query("select * from email_history");
+            $data = $this->dbutil->csv_from_result($query, $delimiter, $newline);
+            force_download($filename, $data);
+        }
     }
 
 ?>
