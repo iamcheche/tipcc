@@ -34,6 +34,7 @@
     </div>
     <br>
     <div class = "row">
+            
         <div id = "crud_form">
             <?php
                 echo form_open('index.php/linkages/search_linkage');

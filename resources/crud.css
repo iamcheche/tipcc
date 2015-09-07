@@ -1,7 +1,7 @@
 #crud_form input{
     color:#191919; 
     background-color: #fff;
-    width: 80%;
+    width: 100%;
     border: 1px solid #f0f0f0;
     text-align: center;
     display: inline-block;
@@ -18,20 +18,19 @@
 #crud_form label{
 float: left;
 text-align: left;
-margin-left: 10%;
 width: 20%;
 }
 
 #crud_form input[type='submit']{
     background-color: #363636;
     color: #ffdb19;
-    width: 80%;
+    width: 100%;
     border: 1px solid #363636;
     box-shadow: 2px 1px 5px #191919
 }
 
 #crud_form textarea{
-    width: 80%;
+    width: 100%;
     display: inline-block;
 }
 

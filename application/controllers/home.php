@@ -8,6 +8,8 @@
             $this->load->helper('url');
             $this->load->model('events_model');
             $this->load->library('calendar');
+            $this->load->helper('download');
+            $this->load->dbutil();
         }
 
         function index(){
@@ -146,6 +148,14 @@
              //If no session, redirect to login page
              redirect('', 'refresh');
             }              
+        }
+
+        function csv($query = null, $filename = 'CSV_Report_Events.csv'){
+            $delimiter = ",";
+            $newline = "rn";
+            $query = $this->db->query("select * from events");
+            $data = $this->dbutil->csv_from_result($query, $delimiter, $newline);
+            force_download($filename, $data);
         }
     }
 ?>

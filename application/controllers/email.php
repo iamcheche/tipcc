@@ -132,7 +132,7 @@
             }
         }
 
-        function sendtostudent(){  
+        function sendtosubscribers(){  
             $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
             $rules = array(
                 array('field'=>'subject','rules'=>'required'),

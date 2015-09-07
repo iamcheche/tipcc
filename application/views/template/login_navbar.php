@@ -236,16 +236,22 @@
         
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li> 
-                <div class = "form-group" style="margin-top:2.3%; margin-left: 3%; text-align: center; color:#191919; ">
-                    <?php echo form_open('index.php/verifylogin'); ?>
-
-                    <input type="text" size="20" id="username" name="username" placeholder ="Enter Username" style = "border: 1px solid #c0c0c0; background-color: #fff;"/>
-                    <input type="password" size="20" id="password" name="password" placeholder = "Enter Password" style = "border: 1px solid #c0c0c0; background-color: #fff;"/>
-                    <input type="submit" value="Login" style = "border: 2px solid #f0f0f0; width: 157px; color: #363636;"/>                
-                    </form>
-                    <?php echo '<div id = "error">' . form_error('username') . '</div>'; ?>
-                    <?php echo '<div id = "error">' . form_error('password') . '</div>'; ?>
+            <li>
+                <a href="#openAdmin" style = "color:#fbde43;">Admin Login</a>
+                <div id="openAdmin" class="modalDialog">
+                    <div>
+                        <a href="#close" title="Close" class="close">X</a>           
+                        <div class = "form-group" style="margin-top:2.3%; margin-left: 3%; text-align: center; color:#191919; ">
+                            <?php echo form_open('index.php/verifylogin'); ?>
+                            <h1>Admin Login</h1>
+                            <input type="text" size="20" id="username" name="username" placeholder ="Enter Username" class = "form-control" style = "border: 1px solid #c0c0c0; background-color: #fff;"/><br>
+                            <input type="password" size="20" id="password" name="password" placeholder = "Enter Password"  class = "form-control" style = "border: 1px solid #c0c0c0; background-color: #fff;"/><br>
+                            <input type="submit" value="Login" style = "border: 2px solid #f0f0f0; width: 100%; height:25px; color: #363636;"/>                
+                            </form>
+                            <?php echo '<div id = "error">' . form_error('username') . '</div>'; ?>
+                            <?php echo '<div id = "error">' . form_error('password') . '</div>'; ?>
+                        </div>
+                    </div>
                 </div>
             </li>
           </ul>

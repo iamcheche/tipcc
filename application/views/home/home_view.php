@@ -1,6 +1,21 @@
 <div id = "container"> 
 	
 	<div class  = "col-md-3">
+                
+                <div class = "row">
+                    <h2 style = "background-color:#363636; color:#fbde43; text-align: center;">OPTIONS</h2>
+                    <div class = "col-md-3"></div>
+                    <div class = "col-md-3" style = "text-align: center;">
+                        <a href="pdf/events"><?php echo img(array('src'=>'img/print.png',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
+                        <p><b>Print</b></p> 
+                    </div>
+
+                    <div class = "col-md-3" style = "text-align: center;">
+                        <a href="home/csv"><?php echo img(array('src'=>'img/export.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
+                        <p><b>Export CSV</b></p> 
+                    </div>
+                    <div class = "col-md-3"></div>
+                </div>		
 		<a href="#openAddEvent"><h2 style ="color:#fbde43; background-color:#363636; text-align:center; box-shadow: 1px 2px 1px #191919;">ADD AN EVENT</h2></a> 
             <div id="openAddEvent" class="modalDialog">
                 <div>
@@ -21,6 +36,7 @@
                                         echo form_input($event_date);
                                         echo '<br><br>';
                                         
+                                        echo form_label('Event Name:');
                                         echo form_textarea($event_name);
                                         echo '<br><br>';
                                         
@@ -79,32 +95,35 @@
                                 
 	</div>		
 		
-	<div class = "col-md-6">
+	<div class = "col-md-6" style = "margin-bottom:4%;">
 				<H2 style = "background-color:#363636; color: #fbde43; text-align:center;">EVENTS CALENDAR</H2>
 				<?php
 					echo $calendar;                
 				?>
 	</div>
 	
-	<div class = "col-md-3" style = "margin-bottom:2%;">
+	<div class = "col-md-3" style = "margin-bottom:30%;">
+
 			<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">SEARCH EVENT</h2>
 				            <div class = "col-md-12">
 				                <div id = "crud_form">
 									<div class = "row">
 										<?php
-											$search_event = array('type'=>'date', 'id' => 'search', 'name' => 'search_event', 'value' => date('20y-m-d'), 'readonly' => true, 'style' => 'width:100%' );
+											$search_event = array('type'=>'date', 'id' => 'search', 'name' => 'search_event', 'placeholder' => date('20y-m-d'), 'readonly' => true, 'style' => 'width:100%' );
 										?>
 										
 										<?php 
 
 											echo form_open('index.php/home/search_event');
 											echo '<div class = "col-md-6">';
-											echo form_input($search_event);
+											echo '<br>';
+                                            echo form_input($search_event);
 											echo '</div>';
+                                            echo '<br>';
 											echo '<div class = "col-md-6">';
 											echo form_submit('submit', 'SEARCH EVENT');
 											echo '</div>';
-											echo '<br><br>';
+                                            echo '<br><br>';
 											echo form_close();
 
 										?>
@@ -146,9 +165,10 @@
 										<?php endforeach; ?>
 										</tbody>
 										<?php else : ?>
-											<h1> NO SCHEDULED EVENTS ON THAT DAY</h1> 
+											<h2> NO SCHEDULED EVENTS ON THAT DAY</h2> 
 										<?php endif; ?>
 									</table>
 								</div>
 							</div>
+                        </div>
 </div>

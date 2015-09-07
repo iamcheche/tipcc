@@ -111,6 +111,50 @@ class Pdf extends CI_Controller{
 		$this->cezpdf->ezStream();
 		
 	}
+
+	function events(){	
+		prep_pdf(); // creates the footer for the document we are creating.
+
+		//$query = $this->pdf_model->get_linkages();
+		$query =  $this->db->query('SELECT * FROM events ORDER BY event_date');
+		$data_table = array();
+		foreach ($query->result_array() as $row) {
+				$data_table[] = $row;
+			}	
+		
+		$title = 'Email History';
+
+		$column_header=array(
+			'event_date' => 'Event Date',
+			'event_name' => 'Event'
+		);
+
+		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>975));
+		$this->cezpdf->ezStream();	
+	}
+
+	function subscriber(){	
+		prep_pdf(); // creates the footer for the document we are creating.
+
+		//$query = $this->pdf_model->get_linkages();
+		$query =  $this->db->query('SELECT * FROM subscribers');
+		$data_table = array();
+		foreach ($query->result_array() as $row) {
+				$data_table[] = $row;
+			}	
+		
+		$title = 'List of Subscribers';
+
+		$column_header=array(
+			'sub_id' => 'ID',
+			'name' => 'Name',
+			'email' => 'Email Address',
+			'contact_number' => 'Contact Number'
+		);
+
+		$this->cezpdf->ezTable($data_table, $column_header, $title, array('width'=>975));
+		$this->cezpdf->ezStream();	
+	}
 }
 
 ?>

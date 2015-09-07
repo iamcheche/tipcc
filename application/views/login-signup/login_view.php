@@ -9,7 +9,7 @@
 
 <div id = "container" style = "margin-top:3%;">
 
-<div class = "col-md-12" style = "margin-bottom:1%;">   
+<div class = "col-md-12" style = "margin-bottom:5.1%;">   
     <div class = "col-md-5" style = "background-color:#363636; opacity:0.9; text-align: justify; text-justify: inter-word;">
         <h2 style = "color: #fbde43; text-align: center;">About T.I.P. Career Center</h2>
         <p style = "color: #f0f0f0; font-weight:bold; text-shadow: 1px 1px #191919;">
@@ -29,76 +29,37 @@
     <div class = "col-md-1"></div>
     <div class = "col-md-6">
             <div id = "options">
-                <h1>Let Us Prepare You. </h1>
+                <h1>Be Updated. Be Active. </h1>
                 <br>
-                <a href="#openStudent" id = "student"><h2>Student</h2><br>Help me with my career</a>
+                <a href="#openSubscribe"><h2 style ="background-color:#363636; text-decoration: none; width: 40%; color: #fbde43; text-align: center; margin-left:30%;">Subscribe</h2></a>
 
-                <div id="openStudent" class="modalDialog">
+                <div id="openSubscribe" class="modalDialog">
                     <div>
                         <a href="#close" title="Close" class="close">X</a>
                         <div id = "register_form">
                                 <?php
-                                    $username = array('id' => 'username', 'name' => 'username');
-                                    $password = array('id' => 'password', 'name' => 'password');
-                                    $c_password = array('id' => 'c_password' , 'name' => 'c_password');
-                                    $first_name = array('id' => 'first_name', 'name' => 'first_name');
-                                    $middle_initial = array('id' => 'middle_initial', 'name' => 'middle_initial');
-                                    $last_name = array('id' => 'last_name', 'name' => 'last_name');
-                                    $email_address = array('id' => 'email_address', 'name' => 'email_address');
-                                    $contact_number = array('id' => 'contact_number' , 'name' => 'contact_number');
-                                    $role = array('id' => 'role' , 'name' => 'role', 'readonly' => 'true');
-                                    $attributes = array('style' => 'font-size:13px;' );                  
+                                    $name = array('id' => 'name', 'name' => 'name', 'class' => 'form-control');
+                                    $email = array('id' => 'email', 'name' => 'email', 'class' => 'form-control');
+                                    $contact_number = array('id' => 'contact_number', 'name' => 'contact_number', 'class' => 'form-control');
                                 ?>
 
-                                <h1>Student Sign Up Page</h1><br />
+                                <h1>Subscription Form</h1><br />
                                 <?php
-                                    echo form_open('index.php/registration/registered');
+                                    echo form_open('index.php/subscribe/subscriber');
 
-                                    echo form_label('Username:', $username['id'], $attributes);
-                                    echo form_input($username);
-                                    echo '<div id = "error">' . form_error('username') . '</div>';
+                                    echo form_label('Name');
+                                    echo form_input($name);
                                     echo '<br>';
-
-                                    echo form_label('Password:', $password['id'], $attributes);
-                                    echo form_password($password);
-                                    echo '<div id = "error">' . form_error('password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Retype Password:', $c_password['id'], $attributes);
-                                    echo form_password($c_password);
-                                    echo '<div id = "error">' . form_error('c_password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('First Name:', $first_name['id'], $attributes);
-                                    echo form_input($first_name);                                    
-                                    echo '<div id = "error">' . form_error('first_name') . '</div>';
-                                    echo '<br>';
-
                                     
-                                    echo form_label('Middle Initial:', $middle_initial['id'], $attributes);
-                                    echo form_input($middle_initial);
-                                    echo '<br><br>';
-                                    
-                                    echo form_label('Last Name:', $last_name['id'], $attributes);
-                                    echo form_input($last_name);                                    
-                                    echo '<div id = "error">' . form_error('last_name') . '</div>';
+                                    echo form_label('Email Address');
+                                    echo form_input($email);
                                     echo '<br>';
 
-                                    
-                                    echo form_label('E-mail Address:', $email_address['id'], $attributes);
-                                    echo form_input($email_address);                                    
-                                    echo '<div id = "error">' . form_error('email_address') . '</div>';
-                                    echo '<br>'; 
-                                    
-                                    echo form_label('Contact Number:', $contact_number['id'], $attributes);
-                                    echo form_input($contact_number);                                    
-                                    echo '<div id = "error">' . form_error('contact_number') . '</div>';
+                                    echo form_label('Contact Number');
+                                    echo form_input($contact_number);
                                     echo '<br>';
 
-                                    echo form_label('Role:', $role['id'], $attributes);
-                                    echo form_input($role, set_value('student', 'student')) ;
-                                    echo '<br><br>';
-                                    echo form_submit('submit', 'Sign me up!');
+                                    echo form_submit('submit', 'Yes, I want to Subscribe');
                                     echo form_close();  
                                     echo '<br>';                        
                                 ?>
@@ -106,231 +67,8 @@
                     </div>
                 </div>
 
-                <a href="#openAlumni" id = "student"><h2>Alumni</h2><br>I want to help my fellow TIPians</a>
-
-                <div id="openAlumni" class="modalDialog">
-                    <div>
-                        <a href="#close" title="Close" class="close">X</a>
-                        <div id = "register_form">
-                            <?php
-                                    $username = array('id' => 'username', 'name' => 'username');
-                                    $password = array('id' => 'password', 'name' => 'password');
-                                    $c_password = array('id' => 'c_password' , 'name' => 'c_password');
-                                    $first_name = array('id' => 'first_name', 'name' => 'first_name');
-                                    $middle_initial = array('id' => 'middle_initial', 'name' => 'middle_initial');
-                                    $last_name = array('id' => 'last_name', 'name' => 'last_name');
-                                    $email_address = array('id' => 'email_address', 'name' => 'email_address');
-                                    $contact_number = array('id' => 'contact_number' , 'name' => 'contact_number');
-                                    $role = array('id' => 'role' , 'name' => 'role', 'readonly' => 'true');
-                                    $attributes = array('style' => 'font-size:13px;' );                  
-                                ?>
-
-                                <h1>Alumni Sign Up Page</h1><br />
-                                <?php
-                                    echo form_open('index.php/registration/registered');
-
-                                    echo form_label('Username:', $username['id'], $attributes);
-                                    echo form_input($username);
-                                    echo '<div id = "error">' . form_error('username') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Password:', $password['id'], $attributes);
-                                    echo form_password($password);
-                                    echo '<div id = "error">' . form_error('password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Retype Password:', $c_password['id'], $attributes);
-                                    echo form_password($c_password);
-                                    echo '<div id = "error">' . form_error('c_password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('First Name:', $first_name['id'], $attributes);
-                                    echo form_input($first_name);                                    
-                                    echo '<div id = "error">' . form_error('first_name') . '</div>';
-                                    echo '<br>';
-
-                                    
-                                    echo form_label('Middle Initial:', $middle_initial['id'], $attributes);
-                                    echo form_input($middle_initial);
-                                    echo '<br>';
-                                    echo '<br>';
-
-                                    echo form_label('Last Name:', $last_name['id'], $attributes);
-                                    echo form_input($last_name);                                    
-                                    echo '<div id = "error">' . form_error('last_name') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('E-mail Address:', $email_address['id'], $attributes);
-                                    echo form_input($email_address);                                    
-                                    echo '<div id = "error">' . form_error('email_address') . '</div>';
-                                    echo '<br>';                                 
-                                        
-                                    echo form_label('Contact Number:', $contact_number['id'], $attributes);
-                                    echo form_input($contact_number);                                    
-                                    echo '<div id = "error">' . form_error('contact_number') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Role:', $role['id'], $attributes);
-                                    echo form_input($role, set_value('alumni', 'alumni')) ;
-                                    echo '<br><br>';
-                                    
-                                    echo form_submit('submit', 'Sign me up!');
-                                    echo form_close();  
-                                    echo '<br>';                        
-                                ?>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#openFaculty" id = "faculty"><h2>Faculty</h2><br>We're here to advise</a>
-
-                <div id="openFaculty" class="modalDialog">
-                    <div>
-                        <a href="#close" title="Close" class="close">X</a>
-                        <div id = "register_form">
-                            <?php
-                                    $username = array('id' => 'username', 'name' => 'username');
-                                    $password = array('id' => 'password', 'name' => 'password');
-                                    $c_password = array('id' => 'c_password' , 'name' => 'c_password');
-                                    $first_name = array('id' => 'first_name', 'name' => 'first_name');
-                                    $middle_initial = array('id' => 'middle_initial', 'name' => 'middle_initial');
-                                    $last_name = array('id' => 'last_name', 'name' => 'last_name');
-                                    $email_address = array('id' => 'email_address', 'name' => 'email_address');
-                                    $contact_number = array('id' => 'contact_number' , 'name' => 'contact_number');
-                                    $role = array('id' => 'role' , 'name' => 'role', 'readonly' => 'true');
-                                    $attributes = array('style' => 'font-size:13px;' );                  
-                                ?>
-
-                                <h1>Faculty Sign Up Page</h1><br />
-                                <?php
-                                    echo form_open('index.php/registration/registered');
-
-                                    echo form_label('Username:', $username['id'], $attributes);
-                                    echo form_input($username);
-                                    echo '<div id = "error">' . form_error('username') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Password:', $password['id'], $attributes);
-                                    echo form_password($password);
-                                    echo '<div id = "error">' . form_error('password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Retype Password:', $c_password['id'], $attributes);
-                                    echo form_password($c_password);
-                                    echo '<div id = "error">' . form_error('c_password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('First Name:', $first_name['id'], $attributes);
-                                    echo form_input($first_name);                                    
-                                    echo '<div id = "error">' . form_error('first_name') . '</div>';
-                                    echo '<br>'; 
-                                    
-                                    echo form_label('Middle Initial:', $middle_initial['id'], $attributes);
-                                    echo form_input($middle_initial);
-                                    echo '<br>';
-                                    echo '<br>';
-
-                                    echo form_label('Last Name:', $last_name['id'], $attributes);
-                                    echo form_input($last_name);                                    
-                                    echo '<div id = "error">' . form_error('last_name') . '</div>';
-                                    echo '<br>'; 
-                                    
-                                    echo form_label('E-mail Address:', $email_address['id'], $attributes);
-                                    echo form_input($email_address);                                    
-                                    echo '<div id = "error">' . form_error('email_address') . '</div>';
-                                    echo '<br>';
-                                    
-                                    echo form_label('Contact Number:', $contact_number['id'], $attributes);
-                                    echo form_input($contact_number);                                    
-                                    echo '<div id = "error">' . form_error('contact_number') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Role:', $role['id'], $attributes);
-                                    echo form_input($role, set_value('faculty', 'faculty')) ;
-                                    echo '<br><br>';
-                                    
-                                    echo form_submit('submit', 'Sign me up!');
-                                    echo form_close();  
-                                    echo '<br>';                        
-                                ?>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#openLinkage" id = "company"><h2>Company</h2><br> We want to be your Industry Partner</a>
-                
-                <div id="openLinkage" class="modalDialog">
-                    <div>
-                        <a href="#close" title="Close" class="close">X</a>
-                        <div id = "register_form">
-                            <?php
-                                    $username = array('id' => 'username', 'name' => 'username');
-                                    $password = array('id' => 'password', 'name' => 'password');
-                                    $c_password = array('id' => 'c_password' , 'name' => 'c_password');
-                                    $first_name = array('id' => 'first_name', 'name' => 'first_name');
-                                    $middle_initial = array('id' => 'middle_initial', 'name' => 'middle_initial');
-                                    $last_name = array('id' => 'last_name', 'name' => 'last_name');
-                                    $email_address = array('id' => 'email_address', 'name' => 'email_address');
-                                    $contact_number = array('id' => 'contact_number' , 'name' => 'contact_number');
-                                    $role = array('id' => 'role' , 'name' => 'role', 'readonly' => 'true');
-                                    $attributes = array('style' => 'font-size:13px;' );                  
-                                ?>
-
-                                <h1>Company Sign Up Page</h1><br />
-                                <?php
-                                    echo form_open('index.php/registration/registered');
-
-                                    echo form_label('Username:', $username['id'], $attributes);
-                                    echo form_input($username);
-                                    echo '<div id = "error">' . form_error('username') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Password:', $password['id'], $attributes);
-                                    echo form_password($password);
-                                    echo '<div id = "error">' . form_error('password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Retype Password:', $c_password['id'], $attributes);
-                                    echo form_password($c_password);
-                                    echo '<div id = "error">' . form_error('c_password') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('First Name:', $first_name['id'], $attributes);
-                                    echo form_input($first_name);                                    
-                                    echo '<div id = "error">' . form_error('first_name') . '</div>';
-                                    echo '<br>'; 
-                                    
-                                    echo form_label('Middle Initial:', $middle_initial['id'], $attributes);
-                                    echo form_input($middle_initial);
-                                    echo '<br>';
-                                    echo '<br>';
-
-                                    echo form_label('Last Name:', $last_name['id'], $attributes);
-                                    echo form_input($last_name);                                    
-                                    echo '<div id = "error">' . form_error('last_name') . '</div>';
-                                    echo '<br>'; 
-                                    
-                                    echo form_label('E-mail Address:', $email_address['id'], $attributes);
-                                    echo form_input($email_address);                                    
-                                    echo '<div id = "error">' . form_error('email_address') . '</div>';
-                                    echo '<br>';
-                                    
-                                    echo form_label('Contact Number:', $contact_number['id'], $attributes);
-                                    echo form_input($contact_number);                                    
-                                    echo '<div id = "error">' . form_error('contact_number') . '</div>';
-                                    echo '<br>';
-
-                                    echo form_label('Role:', $role['id'], $attributes);
-                                    echo form_input($role, set_value('company', 'conpany')) ;
-                                    echo '<br><br>';
-                                    
-                                    echo form_submit('submit', 'Sign me up!');
-                                    echo form_close();  
-                                    echo '<br>';                        
-                                ?>
-                        </div>
-                    </div>
-                </div>
+                <hr>
+                <p> It's always free. You will be updated to the upcoming events/seminars/job fairs and others.</p>
             </div>
         </div>
     </div>

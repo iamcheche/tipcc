@@ -167,7 +167,7 @@
 		$this->show_view_user();
 		}
 
-		function csv($query, $filename = 'CSV_Report_Users.csv'){
+		function csv($query = null, $filename = 'CSV_Report_Users.csv'){
 	        $delimiter = ",";
 	        $newline = "rn";
 	        $query = $this->db->query("select * from users");

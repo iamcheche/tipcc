@@ -15,15 +15,15 @@
                <p><b>Print</b></p> 
             </div>
 
-        <div class = "col-md-2">
+            <div class = "col-md-2">
                 <a href="email/csv"><?php echo img(array('src'=>'img/export.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
                 <p><b>Export CSV</b></p> 
-        </div>
+            </div>
 
-        <div class = "col-md-2">
-            <a href="../email/history"><?php echo img(array('src'=>'img/view.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
-            <p><b>View All</b></p> 
-        </div>
+            <div class = "col-md-2">
+                <a href="../email/history"><?php echo img(array('src'=>'img/view.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
+                <p><b>View All</b></p> 
+            </div>
         </div>
     </div>
     <br>

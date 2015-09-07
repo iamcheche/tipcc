@@ -43,21 +43,14 @@
 }
 
 #student{
-	width: 100%;
-	display: inline-block;
 	background-color: #fbde43;
 	color: #363636;
 	margin-top: 1%;
 	margin-bottom: 1%;
 	box-shadow: 1px 1px 1px #191919;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
 }
 
 #student:hover{
-	width: 100%;
-	display: inline-block;
 	background-color: #363636;
 	color: #fbde43;
 	text-shadow: 1px 1px #191919;
@@ -69,7 +62,6 @@
 #student h2{
 	text-decoration: none;
 	text-align: center;
-	display: inline-block;
 }
 
 #services{
@@ -95,8 +87,6 @@
 }
 
 #faculty{
-	width: 100%;
-	display: inline-block;
 	background-color: #fbde43;
 	color: #363636;
 	margin-top: 1%;
@@ -108,8 +98,6 @@
 }
 
 #faculty:hover{
-	width: 100%;
-	display: inline-block;
 	background-color: #363636;
 	color: #fbde43;
 	box-shadow: 1px 1px 1px #191919;
@@ -121,12 +109,9 @@
 #faculty h2{
 	text-decoration: none;
 	text-align: center;
-	display: inline-block;
 }
 
 #company{
-	width: 100%;
-	display: inline-block;
 	background-color: #fbde43;
 	color: #363636;
 	margin-top: 1%;
@@ -138,8 +123,6 @@
 }
 
 #company:hover{
-	width: 100%;
-	display: inline-block;
 	background-color: #363636;
 	text-shadow: 1px 1px #191919;
 	color: #fbde43;
@@ -151,7 +134,6 @@
 #company h2{
 	text-decoration: none;
 	text-align: center;
-	display: inline-block;
 }
 
 

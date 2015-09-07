@@ -191,7 +191,7 @@
 			$this->show_view_linkage();
 		}
 
-		function csv($query, $filename = 'CSV_Report_Linkages.csv'){
+		function csv($query = null, $filename = 'CSV_Report_Linkages.csv'){
 	        $delimiter = ",";
 	        $newline = "rn";
 	        $query = $this->db->query("select * from linkages");
