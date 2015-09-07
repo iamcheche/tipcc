@@ -46,7 +46,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url('index.php/email')?>">Linkages</a></li>
-                        <li><a href="#">Subscribers</a></li>
+                        <li><a href="<?php echo base_url('index.php/email/subscribers')?>">Subscribers</a></li>
                         <li><a href="<?php echo base_url('index.php/email/history')?>">Email Blast History</a></li>
                     </ul>
                 </div>

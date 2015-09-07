@@ -9,6 +9,7 @@
             $this->load->helper('url');
             $this->load->helper('form');
             $this->load->model('email_model');
+            $this->load->model('subscribe_model');
             $this->load->library('form_validation');
             $this->load->library('upload');
             $this->load->dbutil();
@@ -30,6 +31,20 @@
             }
         }
 
+        function subscribers(){
+            if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+                $this->load->view('template/header', $data);
+                $this->load->view('template/navbar', $data);
+                $this->load->view('email/email_subscriber');
+                $this->load->view('template/footer');
+            }else{
+             //If no session, redirect to login page
+             redirect('', 'refresh');
+            }
+        }
         function history(){
             if($this->session->userdata('logged_in')){
                 $session_data = $this->session->userdata('logged_in');
@@ -159,13 +174,12 @@
                 $body = $this->input->post('message');
                 
                 $this->db->select('email_address');
-                $this->db->where('role = "student"');
-                $to = $this->db->get('users')->result_array();
+                $to = $this->db->get('subscribers')->result_array();
 
                 $recipient = array();
                 
                 foreach($to as $key => $value){
-                    $recipient[] = $value['contact_email'];
+                    $recipient[] = $value['email'];
                 }                
 
                 $msg_head = $this->load->view('template/header_email', '', TRUE);
