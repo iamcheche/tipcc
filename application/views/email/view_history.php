@@ -1,7 +1,7 @@
 <div class="container">         
     <div class="row" style = "text-align:center;">
         <?php  
-            $search = array('id' => 'search', 'name' => 'search', 'placeholder' => 'Search User(s)', 'style' => 'width:100%;'); 
+            $search = array('id' => 'search', 'name' => 'search', 'placeholder' => 'Search Email Subject(s)', 'style' => 'width:100%;'); 
         ?>
         
 
@@ -37,7 +37,7 @@
                 echo '<br><br>';
                 echo '</div>';
                 echo '<div class = "col-md-3">';
-                echo form_submit('submit', 'Search User(s)');
+                echo form_submit('submit', 'Search Email Subject');
                 echo form_close();
                 echo '<br><br>';
                 echo '</div>';
