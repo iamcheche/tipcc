@@ -102,7 +102,7 @@
 				?>
 	</div>
 	
-	<div class = "col-md-3" style = "margin-bottom:30%;">
+	<div class = "col-md-3">
 
 			<h2 style = "background-color:#363636; color:#fbde43; text-align: center;">SEARCH EVENT</h2>
 				            <div class = "col-md-12">

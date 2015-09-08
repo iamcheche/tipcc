@@ -173,7 +173,7 @@
                 $subject = $this->input->post('subject');
                 $body = $this->input->post('message');
                 
-                $this->db->select('email_address');
+                $this->db->select('email');
                 $to = $this->db->get('subscribers')->result_array();
 
                 $recipient = array();

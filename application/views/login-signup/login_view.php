@@ -9,7 +9,7 @@
 
 <div id = "container" style = "margin-top:3%;">
 
-<div class = "col-md-12" style = "margin-bottom:5.1%;">   
+<div class = "col-md-12" style = "margin-bottom:4.5%;">   
     <div class = "col-md-5" style = "background-color:#363636; opacity:0.9; text-align: justify; text-justify: inter-word;">
         <h2 style = "color: #fbde43; text-align: center;">About T.I.P. Career Center</h2>
         <p style = "color: #f0f0f0; font-weight:bold; text-shadow: 1px 1px #191919;">
@@ -31,42 +31,42 @@
             <div id = "options">
                 <h1>Be Updated. Be Active. </h1>
                 <br>
-                <a href="#openSubscribe"><h2 style ="background-color:#363636; text-decoration: none; width: 40%; color: #fbde43; text-align: center; margin-left:30%;">Subscribe</h2></a>
 
-                <div id="openSubscribe" class="modalDialog">
-                    <div>
-                        <a href="#close" title="Close" class="close">X</a>
-                        <div id = "register_form">
-                                <?php
-                                    $name = array('id' => 'name', 'name' => 'name', 'class' => 'form-control');
-                                    $email = array('id' => 'email', 'name' => 'email', 'class' => 'form-control');
-                                    $contact_number = array('id' => 'contact_number', 'name' => 'contact_number', 'class' => 'form-control');
-                                ?>
+                    <?php
+                        $name = array('id' => 'name', 'name' => 'name', 'class' => 'form-control');
+                        $email = array('id' => 'email', 'name' => 'email', 'class' => 'form-control');
+                        $contact_number = array('id' => 'contact_number', 'name' => 'contact_number', 'class' => 'form-control');
+                    ?>
 
-                                <h1>Subscription Form</h1><br />
+                    <h2>Subscribe Now!</h2><br />
+                    <div class = "row">
+                        <div class = "col-md-1"></div>
+                        <div class = "col-md-10">
+                            <div id = "register_form" style = "background-color:#f0f0f0;">
                                 <?php
                                     echo form_open('index.php/subscribe/subscriber');
 
                                     echo form_label('Name');
                                     echo form_input($name);
                                     echo '<br>';
-                                    
+                                
                                     echo form_label('Email Address');
                                     echo form_input($email);
                                     echo '<br>';
-
+                    
                                     echo form_label('Contact Number');
                                     echo form_input($contact_number);
                                     echo '<br>';
-
+                    
                                     echo form_submit('submit', 'Yes, I want to Subscribe');
                                     echo form_close();  
-                                    echo '<br>';                        
                                 ?>
+                            </div>
                         </div>
+                        <div class = "col-md-1"></div>
                     </div>
-                </div>
-
+                
+                
                 <hr>
                 <p> It's always free. You will be updated to the upcoming events/seminars/job fairs and others.</p>
             </div>

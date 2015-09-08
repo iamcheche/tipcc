@@ -14,13 +14,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <!-- <li><a href="<?php echo base_url('index.php/home'); ?>" style = "color:#fbde43;">Events Calendar</a></li>
-            <li><a href="<?php echo base_url('index.php/linkages'); ?>" style = "color:#fbde43;">Manage Linkages</a></li>
-            <li><a href="<?php echo base_url('index.php/users'); ?>" style = "color:#fbde43;">Manage Users</a></li>
-            <li><a href="<?php echo base_url('index.php/subscribe'); ?>" style = "color:#fbde43;">Manage Subscribers</a></li>            
-            <li><a href="<?php echo base_url('index.php/email')?>" style = "color:#fbde43;">Email Linkages</a></li>
-            <li><a href="#" style = "color:#fbde43;">Email Subscribers</a></li>
-            <li><a href="<?php echo base_url('index.php/email/history')?>" style = "color:#fbde43;">Email History</a></li> -->
             <div class="btn-group" style = "margin-top:2.5%; margin-left: 2.5%;">
                 
                 <div class = "btn-group">
