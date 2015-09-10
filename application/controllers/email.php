@@ -225,7 +225,7 @@
 
         function delete(){
             $this->email_model->delete();
-            $this->index();
+            $this->load->view('email/view_history');
         }
         
         function csv($query = null, $filename = 'CSV_Report_History.csv'){
@@ -235,6 +235,53 @@
             $data = $this->dbutil->csv_from_result($query, $delimiter, $newline);
             force_download($filename, $data);
         }
-    }
 
+        function show_view_email() {
+            if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+           
+                $id = $this->uri->segment(3);
+                $data['email'] = $this->email_model->email_view();
+                $data['single_email'] = $this->email_model->show_email_rec($id);
+                $this->load->view('template/header', $data);
+                $this->load->view('template/navbar');
+                $this->load->view('email/view_email', $data);
+                $this->load->view('template/footer');
+             }else{
+                //If no session, redirect to login page
+                 redirect('', 'refresh');
+            } 
+        }
+
+        function view_email() {
+            $id= $this->input->post('email_id');
+            $data = array(
+                'subject'=>$this->input->post('subject'),
+                'message'=>$this->input->post('message'),
+                'email_sent'=>$this->input->post('email_sent'),
+            );
+        $this->email_model->view_email($id,$data);
+        $this->show_view_email();
+        }
+        
+        function search_email(){
+            if($this->session->userdata('logged_in')){
+                $session_data = $this->session->userdata('logged_in');
+                $data['username'] = $session_data['username'];
+                $data['title'] = 'TIP Career Center';
+                $data['records'] = $this->email_model->get_email();
+                
+                $this->load->view('template/header', $data);
+                $this->load->view('template/navbar');
+                $this->load->view('email/view_history', $data);             
+                $this->load->view('template/footer');
+             }else{
+                //If no session, redirect to login page
+                 redirect('', 'refresh');
+            }
+        }
+
+    }
 ?>

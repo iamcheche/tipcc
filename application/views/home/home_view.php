@@ -2,21 +2,22 @@
 	
 	<div class  = "col-md-3">
                 
-                <div class = "row">
                     <h2 style = "background-color:#363636; color:#fbde43; text-align: center;">OPTIONS</h2>
-                    <div class = "col-md-3"></div>
-                    <div class = "col-md-3" style = "text-align: center;">
+                    <div class = "col-md-4" style = "text-align:center;">
+                        <a href="#openAddEvent"><?php echo img(array('src'=>'img/add.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
+                        <p><b>Create Event</b></p> 
+
+                    </div>
+                    <div class = "col-md-4" style = "text-align: center;">
                         <a href="pdf/events"><?php echo img(array('src'=>'img/print.png',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
                         <p><b>Print</b></p> 
                     </div>
 
-                    <div class = "col-md-3" style = "text-align: center;">
+                    <div class = "col-md-4" style = "text-align: center;">
                         <a href="home/csv"><?php echo img(array('src'=>'img/export.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
                         <p><b>Export CSV</b></p> 
                     </div>
-                    <div class = "col-md-3"></div>
-                </div>		
-		<a href="#openAddEvent"><h2 style ="color:#fbde43; background-color:#363636; text-align:center; box-shadow: 1px 2px 1px #191919;">ADD AN EVENT</h2></a> 
+                <br><br><br>
             <div id="openAddEvent" class="modalDialog">
                 <div>
                     <a href="<?php echo base_url() ?>" title="Close" class="close">X</a>

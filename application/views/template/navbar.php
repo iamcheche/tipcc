@@ -17,14 +17,14 @@
             <div class="btn-group" style = "margin-top:2.5%; margin-left: 2.5%;">
                 
                 <div class = "btn-group">
-                    <a href="<?php echo base_url('index.php/home'); ?>"><button type="button" class="btn btn-default">Events Calendar</button></a>
+                    <a href="<?php echo base_url('index.php/home'); ?>"><button type="button" class="btn btn-default">Events Calendar</button><br></a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" 
                     data-toggle="dropdown">
                     Manage
                     <span class="caret"></span>
-                    </button>
+                    </button><br>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url('index.php/linkages'); ?>">Linkages</a></li>
                         <li><a href="<?php echo base_url('index.php/users'); ?>">Users</a></li>
@@ -36,7 +36,7 @@
                     data-toggle="dropdown">
                     Blast Email
                     <span class="caret"></span>
-                    </button>
+                    </button><br>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url('index.php/email')?>">Linkages</a></li>
                         <li><a href="<?php echo base_url('index.php/email/subscribers')?>">Subscribers</a></li>

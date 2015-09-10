@@ -1,15 +1,14 @@
 <div id = "container">	
-	<div class = "row">
-		<div class = "col-md-12" style="background-color:#191919;color:#ffdb19;text-align:center; ">
+      <div class = "row"></div>
+		<div class = "col-md-12" style="background-color:#363636;color:#fbde43;text-align:center; ">
 			<h1>RECORD VIEWER</h1>
 		</div>
-	</div>
+      </div>
 	<br>
-	<div class = "row" style="text-align:center;">
-		<div class = "col-md-12" >
+            <div class = "col-md-1"></div>
+		<div class = "col-md-10" >
 
 			<br>
-			<div class="row">
 				<div id = "crud_form">
                         <?php foreach ($single_linkage as $linkage): ?>
 				<?php
@@ -104,8 +103,7 @@
                                     echo form_close();                          
                     ?>
               <?php endforeach; ?>
-		        </div>
-	        </div>
 		</div>
+            <div class = "col-md-1"></div>
 	</div>
 </div>      

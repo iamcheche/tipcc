@@ -21,6 +21,8 @@
 #options{
 	background-color: #f0f0f0;
 	text-align: center;
+	box-shadow: 0px 0px  1px #191919;
+	border: 1px solid #363636;
 }
 
 #options hr { 

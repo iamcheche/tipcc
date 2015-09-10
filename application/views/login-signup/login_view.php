@@ -7,10 +7,11 @@
     <li style = "color: transparent"><span>Image 06</span></li>
 </ul>
 
-<div id = "container" style = "margin-top:3%;">
+<div id = "container">
 
-<div class = "col-md-12" style = "margin-bottom:4.5%;">   
-    <div class = "col-md-5" style = "background-color:#363636; opacity:0.9; text-align: justify; text-justify: inter-word;">
+<div class = "col-md-12" style = "margin-bottom:0.8%;">   
+    <div class = "col-md-1"></div>
+    <div class = "col-md-4" style = "background-color:#363636; opacity:0.9; text-align: justify; text-justify: inter-word;">
         <h2 style = "color: #fbde43; text-align: center;">About T.I.P. Career Center</h2>
         <p style = "color: #f0f0f0; font-weight:bold; text-shadow: 1px 1px #191919;">
             The T.I.P. Career Center aims to bring you closer to the career of your dreams. The center provides the resources needed for your career development. It also links you to T.I.P.'s leading industry parnters for internship, job placement and other opportunities.
@@ -27,7 +28,7 @@
         </p>    
     </div>
     <div class = "col-md-1"></div>
-    <div class = "col-md-6">
+    <div class = "col-md-5">
             <div id = "options">
                 <h1>Be Updated. Be Active. </h1>
                 <br>

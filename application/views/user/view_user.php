@@ -8,11 +8,10 @@
 		</div>
 	</div>
 	<br>
-	<div class = "row" style="text-align:center;">
-		<div class = "col-md-12" >
+            <div class = "col-md-1"></div>
+		<div class = "col-md-10" >
 
 			<br>
-			<div class="row">
 				<div id = "crud_form">
                         <?php foreach ($single_user as $user): ?>
                         <?php
@@ -71,7 +70,6 @@
                     ?>
               <?php endforeach; ?>		        
                   </div>
-	        </div>
-		</div>
-	</div>
+	      </div>
+            <div class = "col-md-1"></div>
 </div>      
