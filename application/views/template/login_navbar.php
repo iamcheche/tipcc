@@ -236,7 +236,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="#openAdmin" style = "color:#fbde43;"><?php echo img(array('src'=>'img/login.png',  'width' => '22', 'height' => '22')); ?></a>
+                <a href="#openAdmin" style = "color:#fbde43; text-align:center;"><?php echo img(array('src'=>'img/login.png',  'width' => '22', 'height' => '22')); ?></a>
                 <div id="openAdmin" class="modalDialog">
                     <div>
                         <a href="#close" title="Close" class="close">X</a>           
