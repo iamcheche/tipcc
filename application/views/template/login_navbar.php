@@ -229,7 +229,6 @@
                                 <h4 style = "font-weight:bolder;">CAREER EXPLORATION</h4>
                                 <p style = "text-align: justify; text-justify: inter-word;">The Career Center provides career exploration program to help students learn about themselves and the world of work, identify and explore potentially satisfying occupations, and develop an effective strategy to realize their goals. Career exploration program includes internship, externship, employer information sessions, career fairs, networking with the alumni and other career development trainings and seminars. </p>
                             </div>
-
                         </div>
                     </div>
             </li>
@@ -237,13 +236,13 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="#openAdmin" style = "color:#fbde43;">ADMIN LOGIN</a>
+                <a href="#openAdmin" style = "color:#fbde43;"><?php echo img(array('src'=>'img/login.png',  'width' => '22', 'height' => '22')); ?></a>
                 <div id="openAdmin" class="modalDialog">
                     <div>
                         <a href="#close" title="Close" class="close">X</a>           
                         <div class = "form-group" style="margin-top:2.3%; margin-left: 3%; text-align: center; color:#191919; ">
                             <?php echo form_open('index.php/verifylogin'); ?>
-                            <h2 style="background-color:#363636; color: #fbde43;">Admin Login</h2>
+                            <h2 style="background-color:#363636; color: #fbde43;">ADMIN LOGIN</h2>
                             <input type="text" size="20" id="username" name="username" placeholder ="Enter Username" class = "form-control" style = "border: 1px solid #c0c0c0; background-color: #fff;"/><br>
                             <input type="password" size="20" id="password" name="password" placeholder = "Enter Password"  class = "form-control" style = "border: 1px solid #c0c0c0; background-color: #fff;"/><br>
                             <input type="submit" value="Login" style = "border: 2px solid #f0f0f0; width: 100%; height:25px; color: #363636;"/>                

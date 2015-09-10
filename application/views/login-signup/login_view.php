@@ -9,7 +9,7 @@
 
 <div id = "container">
 
-<div class = "col-md-12" style = "margin-bottom:0.8%;">   
+<div class = "col-md-12" style = "margin-bottom:0.6%;">   
     <div class = "col-md-1"></div>
     <div class = "col-md-4" style = "background-color:#363636; opacity:0.9; text-align: justify; text-justify: inter-word;">
         <h2 style = "color: #fbde43; text-align: center;">About T.I.P. Career Center</h2>
