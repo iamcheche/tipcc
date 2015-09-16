@@ -22,8 +22,8 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" 
                     data-toggle="dropdown">
-                    Manage
-                    <span class="caret"></span>
+                        Manage
+                        <span class="caret"></span>
                     </button><br>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url('index.php/linkages'); ?>">Linkages</a></li>
@@ -47,8 +47,7 @@
         </ul>
       
         <ul class="nav navbar-nav navbar-right">
-            <li>
-            </li>
+            <li></li>
             <li> 
                 <h4 style="margin-top: 6.5%; margin-left: 2%;"> 
                 Howdy, <?php echo $username; ?> | <a href = "#openLogout">Logout</a></h4></li>

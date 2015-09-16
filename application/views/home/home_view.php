@@ -1,6 +1,8 @@
+    
 <div id = "container"> 
-	
-	<div class  = "col-md-3">
+    <div class = "col-md-12"><H1 style = "background-color:#363636; color: #fbde43; text-align:center;">EVENTS CALENDAR</H1></div>  
+
+    <div class  = "col-md-3">
         <h2 style = "background-color:#363636; color:#fbde43; text-align: center;">OPTIONS</h2>
         <div class = "col-md-4" style = "text-align:center;">
             <a href="#openAddEvent"><?php echo img(array('src'=>'img/add.jpg',  'width' => '50', 'height' => '50', 'style' => 'border-radius:50%;  box-shadow: 2px 1px 5px #191919;')); ?></a>
@@ -92,10 +94,10 @@
                     <h1> NO SCHEDULED EVENTS TODAY</h1> 
                 <?php endif; ?>
             </table>                            
-	    </div>		
+	    <br>
+        </div>		
 		
 	<div class = "col-md-6" style = "margin-bottom:4%;">
-		<H2 style = "background-color:#363636; color: #fbde43; text-align:center;">EVENTS CALENDAR</H2>
 		<?php
 			echo $calendar;                
 		?>
