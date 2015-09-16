@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="color:#ffdb19; padding:0 !important;"><img src="<?php echo base_url();?>img/tipcc.jpg" style="width:120px; height: 50px;" /></a><p>Login</p>
+            <a class="navbar-brand" style="color:#ffdb19; padding:0 !important;"><img src="<?php echo base_url();?>img/tipcc.jpg" style="width:120px; height: 50px;" /></a>
         </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

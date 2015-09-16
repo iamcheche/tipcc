@@ -6,7 +6,8 @@
 	</div>
 	<br>
 	<div class = "row" style="text-align:center;">
-		<div class = "col-md-12" >
+		<div class = "col-md-1"></div>
+		<div class = "col-md-10" >
 
 			<br>
 			<div class="row">
@@ -34,9 +35,10 @@
                               echo '<br /><br />';
                               echo form_close();                          
                     ?>
-              <?php endforeach; ?>
+              		<?php endforeach; ?>
 		        </div>
 	        </div>
 		</div>
+		<div class = "col-md-1"></div>
 	</div>
 </div>      
