@@ -13,7 +13,7 @@
 				<div id = "crud_form">
                         <?php foreach ($single_linkage as $linkage): ?>
 				<?php
-                              $linkage_id = array('id' => 'linkages_id', 'name' => 'linkages_id', 'class' => 'form-control', 'placeholder' => 'Linkage ID', 'value' => $linkage->linkage_id, 'readonly' => true  );
+                        $linkage_id = array('id' => 'linkages_id', 'name' => 'linkages_id', 'class' => 'form-control', 'placeholder' => 'Linkage ID', 'value' => $linkage->linkage_id, 'readonly' => true  );
 			            $company_name = array('id' => 'company_name', 'name' => 'company_name', 'class' => 'form-control', 'placeholder' => 'Company Name (ex. Technological Institute of the Philippines)', 'value' => $linkage->company_name);
 			            $company_tel_no = array('id' => 'company_tel_no', 'name' => 'company_tel_no', 'class' => 'form-control', 'placeholder' => 'Company Telephone Number (ex. 9111111)', 'value' =>  $linkage->company_tel_no);
 			            $address_no = array('id' => 'address_no' , 'name' => 'address_no', 'class' => 'form-control', 'placeholder' => 'Address Number (ex. 938)', 'value' =>  $linkage->address_no);
