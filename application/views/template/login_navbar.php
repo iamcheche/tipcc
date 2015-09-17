@@ -77,11 +77,11 @@
                                     <h1>STUDENT DEVELOPMENT</h1> <br>
                                 </div>
                                 <div class = "col-md-12">
-                                        <p>We know that forming a crystal clear vision of your future is overwhelming; hence, the center helps you prepare for your future career through the following:</p>
+                                    <p>We know that forming a crystal clear vision of your future is overwhelming; hence, the center helps you prepare for your future career through the following:</p>
                                 </div>
                                 <div class = "col-md-4">
-                                     <h4 style = "font-weight:bolder;">T.I.P. Student Development Program (SDP)</h4>
-                                     <p>SDP helps you enhance your employability and desirability and to develop among you a winning mindset, to be confident and ready to face challenges in work and in life.</p>
+                                    <h4 style = "font-weight:bolder;">T.I.P. Student Development Program (SDP)</h4>
+                                    <p>SDP helps you enhance your employability and desirability and to develop among you a winning mindset, to be confident and ready to face challenges in work and in life.</p>
                                 </div>
 
                                 <div class = "col-md-4">
@@ -90,11 +90,12 @@
                                 </div>
 
                                 <div class = "col-md-4">
-                                     <h4 style = "font-weight:bolder;">Networking with Alumni</h4>
-                                     <p>The center keeps track of T.I.P. alumni and links you for career advising and coaching, internship, externship, and job placement opportunities.</p>
+                                    <h4 style = "font-weight:bolder;">Networking with Alumni</h4>
+                                    <p>The center keeps track of T.I.P. alumni and links you for career advising and coaching, internship, externship, and job placement opportunities.</p>
                                 </div>
                             </div>
                     </div>
+                </div>
             </li>
             
             <li>
@@ -103,9 +104,11 @@
                     <div>
                         <a href="#close" title="Close" class="close">X</a>
                         <div class = "row">
+
                             <div class = "col-md-12" style = "background-color:#363636; color:#fbde43;">
                                 <h1>SCHOLARSHIP</h1>
                             </div>
+
                             <div class = "col-md-12">
                                 <p>The Career Center's scholarship programs are industry-specific, help you explore job placement opportunities aligned with your career interests and choices.</p>
                             </div>
