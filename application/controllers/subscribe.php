@@ -29,7 +29,6 @@
 		        $this->load->view('subscribe/subscriber_view', $data);
 		    
 		    }else{
-		         	//If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
 		         	redirect('', 'refresh');
 		    }
 		}

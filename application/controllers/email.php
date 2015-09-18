@@ -26,8 +26,7 @@
                 $this->load->view('email/email_view');
                 $this->load->view('template/footer');
             }else{
-             //If no session, redirect to login page
-             redirect('', 'refresh');
+                redirect('', 'refresh');
             }
         }
 
@@ -41,8 +40,7 @@
                 $this->load->view('email/email_subscriber');
                 $this->load->view('template/footer');
             }else{
-             //If no session, redirect to login page
-             redirect('', 'refresh');
+                redirect('', 'refresh');
             }
         }
         function history(){
@@ -54,11 +52,6 @@
                 $this->load->view('template/navbar');
                 $this->load->view('template/footer');
                 
-                /*$linkage_result = $this->linkages_model->view();           
-                $data['linkresult'] = $linkage_result;
-                //load the department_view
-                $this->load->view('linkages_view',$data);*/
-
                 if ($query = $this->email_model->email_view()){
                     $data['records'] = $query;
                 }   
@@ -66,8 +59,7 @@
                 $this->load->view('email/view_history', $data);
             
             }else{
-                    //If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
-                    redirect('', 'refresh');
+                redirect('', 'refresh');
             }   
         }
 
@@ -141,7 +133,6 @@
                     $this->load->view('email/email_view');
                     $this->load->view('template/footer');
                 }else{
-                    //If no session, redirect to login page
                     redirect('', 'refresh');
                 }
             }
@@ -217,7 +208,6 @@
                     $this->load->view('email/email_view');
                     $this->load->view('template/footer');
                 }else{
-                    //If no session, redirect to login page
                     redirect('', 'refresh');
                 }
             }
@@ -250,8 +240,7 @@
                 $this->load->view('email/view_email', $data);
                 $this->load->view('template/footer');
              }else{
-                //If no session, redirect to login page
-                 redirect('', 'refresh');
+                redirect('', 'refresh');
             } 
         }
 
@@ -278,8 +267,7 @@
                 $this->load->view('email/view_history', $data);             
                 $this->load->view('template/footer');
              }else{
-                //If no session, redirect to login page
-                 redirect('', 'refresh');
+                redirect('', 'refresh');
             }
         }
 

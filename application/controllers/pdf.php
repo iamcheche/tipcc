@@ -12,16 +12,10 @@ class Pdf extends CI_Controller{
 		$this->load->helper('pdf');
 	}
 	
-	
-	function index(){	
-
-	}
-
 	function linkage()
 	{	
-		prep_pdf(); // creates the footer for the document we are creating.
+		prep_pdf(); 
 
-		//$query = $this->pdf_model->get_linkages();
 		$query =  $this->db->query('SELECT * FROM linkages');
 		$data_table = array();
 		foreach ($query->result_array() as $row) {
@@ -58,9 +52,8 @@ class Pdf extends CI_Controller{
 	}
 
 	function user(){	
-		prep_pdf(); // creates the footer for the document we are creating.
+		prep_pdf(); 
 
-		//$query = $this->pdf_model->get_linkages();
 		$query =  $this->db->query('SELECT * FROM users');
 		$data_table = array();
 		foreach ($query->result_array() as $row) {
@@ -89,9 +82,8 @@ class Pdf extends CI_Controller{
 	}
 
 	function email_history(){	
-		prep_pdf(); // creates the footer for the document we are creating.
+		prep_pdf(); 
 
-		//$query = $this->pdf_model->get_linkages();
 		$query =  $this->db->query('SELECT * FROM email_history');
 		$data_table = array();
 		foreach ($query->result_array() as $row) {
@@ -113,9 +105,8 @@ class Pdf extends CI_Controller{
 	}
 
 	function events(){	
-		prep_pdf(); // creates the footer for the document we are creating.
+		prep_pdf(); 
 
-		//$query = $this->pdf_model->get_linkages();
 		$query =  $this->db->query('SELECT * FROM events ORDER BY event_date');
 		$data_table = array();
 		foreach ($query->result_array() as $row) {
@@ -134,9 +125,8 @@ class Pdf extends CI_Controller{
 	}
 
 	function subscriber(){	
-		prep_pdf(); // creates the footer for the document we are creating.
-
-		//$query = $this->pdf_model->get_linkages();
+		prep_pdf(); 
+		
 		$query =  $this->db->query('SELECT * FROM subscribers');
 		$data_table = array();
 		foreach ($query->result_array() as $row) {

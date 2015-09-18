@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-    session_start(); //we need to call PHP's session object to access it through CI
+    session_start(); 
     class Home extends CI_Controller {
 
         function __construct(){
@@ -44,8 +44,7 @@
                 $this->load->view('home/home_view', $data);
                 $this->load->view('template/footer');                
             }else{
-             //If no session, redirect to login page
-             redirect('', 'refresh');
+                redirect('', 'refresh');
             }
         
         }
@@ -72,7 +71,6 @@
                         $this->load->view('template/footer');
 
                     }else{
-                        //If no session, redirect to login page
                         redirect('home/home_view', 'refresh');
                     }
                 }else{
@@ -101,8 +99,7 @@
                 $this->load->view('home/event_update', $data);
                 $this->load->view('template/footer');
              }else{
-                //If no session, redirect to login page
-                 redirect('', 'refresh');
+                redirect('', 'refresh');
             } 
         }
 
@@ -145,8 +142,7 @@
                 $this->load->view('home/home_view', $data);
                 $this->load->view('template/footer');                
             }else{
-             //If no session, redirect to login page
-             redirect('', 'refresh');
+                redirect('', 'refresh');
             }              
         }
 

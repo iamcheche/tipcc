@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-	session_start(); //we need to call PHP's session object to access it through CI
+	session_start(); 
 	class Linkages extends CI_Controller {
 
     	function __construct(){
@@ -28,7 +28,6 @@
 	          	}   
 		        $this->load->view('linkage/linkages_view', $data);		    
 		    }else{
-		         	//If no session, redirect to localeconv(oid)                                                                                                                                                       gin page
 		         	redirect('', 'refresh');
 		    }
     	}
@@ -44,8 +43,7 @@
                 $this->load->view('template/footer');
 
             }else{
-	        //If no session, redirect to login page
-             redirect('', 'refresh');
+	        	redirect('', 'refresh');
             }
     	}
 
@@ -84,8 +82,7 @@
 		                $this->load->view('template/footer');
 
 		            }else{
-				        //If no session, redirect to login page
-			            redirect('', 'refresh');
+				        redirect('', 'refresh');
 		            }
 				}else{
 					$this->linkages_model->create();
@@ -111,9 +108,8 @@
 	            $this->load->view('template/navbar');
 	            $this->load->view('linkage/linkages_update', $data);
 	            $this->load->view('template/footer');
-	         }else{
-		        //If no session, redirect to login page
-	             redirect('', 'refresh');
+	        }else{
+		        redirect('', 'refresh');
             } 
 		}
 
@@ -158,8 +154,7 @@
 	            $this->load->view('linkage/view_linkage_rec', $data);
 	            $this->load->view('template/footer');
 	         }else{
-		        //If no session, redirect to login page
-	             redirect('', 'refresh');
+		        redirect('', 'refresh');
             } 
 		}
 		
@@ -212,8 +207,7 @@
 				$this->load->view('template/footer');
 	         
 	         }else{
-		        //If no session, redirect to login page
-	             redirect('', 'refresh');
+		        redirect('', 'refresh');
             }
 		}
 	} 

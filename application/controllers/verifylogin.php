@@ -8,7 +8,7 @@ class VerifyLogin extends CI_Controller {
     }
 
     function index(){
-        //This method will have the credentials validation
+        
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -39,10 +39,8 @@ class VerifyLogin extends CI_Controller {
     }
 
     function check_database($password){
-        //Field validation succeeded.  Validate against database
         $username = $this->input->post('username');
 
-        //query the database
         $result = $this->user->login($username, $password);
 
         if($result){
