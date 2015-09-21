@@ -18,8 +18,7 @@
         	$this->db->delete('users');
         }
     	
-    	//add user
-		public function create(){
+    	public function create(){
 		
 			$data=array(
 				'user_id'=>$this->input->post('user_id'),
@@ -39,7 +38,6 @@
 			return true;	
 		}
 
-		// Function To Fetch Selected Student Record
 		function show_user($data){
 			$this->db->select('*');
 			$this->db->from('users');
@@ -49,13 +47,11 @@
 			return $result;
 		}
 		
-		// Update Query For Selected Student
 		function update_user($id,$data){
 			$this->db->where('user_id', $id, $this->uri->segment(3));
 			$this->db->update('users', $data);
 		}
 
-		// Function To Fetch Selected Student Record
 		function show_user_rec($data){
 			$this->db->select('*');
 			$this->db->from('users');
@@ -65,7 +61,6 @@
 			return $result;
 		}
 		
-		// Update Query For Selected Student
 		function view_user($id,$data){
 			$this->db->where('user_id', $id, $this->uri->segment(3));
 			$this->db->update('users', $data);

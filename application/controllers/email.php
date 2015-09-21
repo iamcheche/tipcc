@@ -255,7 +255,7 @@
         $this->show_view_email();
         }
         
-        function search_email(){
+        function email_search(){
             if($this->session->userdata('logged_in')){
                 $session_data = $this->session->userdata('logged_in');
                 $data['username'] = $session_data['username'];

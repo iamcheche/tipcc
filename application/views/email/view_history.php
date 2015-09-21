@@ -30,7 +30,7 @@
     <div class = "row">
         <div id = "crud_form">
             <?php
-                echo form_open('index.php/email/search_email');
+                echo form_open('index.php/email/email_search');
                 echo '<div class = "col-md-1"></div>';
                 echo '<div class = "col-md-7">';
                 echo form_input($search);

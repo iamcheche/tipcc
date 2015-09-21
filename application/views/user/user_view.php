@@ -129,14 +129,13 @@
                     <table class = "table" >
                         <thead>
                             <tr style="text-align:center; ">
-                                <th style="text-align:center;">ID</th>
-                                <th style="text-align:center;">Username</th>
-                                <th style="text-align:center;">Name</th>
-                                <th style="text-align:center;">Email Address</th>
-                                <th style="text-align:center;">Contact Number</th>
-                                <th style="text-align:center;">Role</th>
+                                <th style="text-align:center; width: 10%;">ID</th>
+                                <th style="text-align:center;width: 20%;">Username</th>
+                                <th style="text-align:centerwidth: 30%;;">Name</th>
+                                <th style="text-align:center; width: 10%;">Email Address</th>
+                                <th style="text-align:center; width: 10%;">Contact Number</th>
                                 <th style="text-align:center;">Date Created</th>
-                                <th colspan="3" style = "text-align:center;">Actions</th>
+                                <th colspan="3" style = "text-align:center;width: 20%;">Actions</th>
                             </tr>
                         </thead>
 
@@ -148,7 +147,6 @@
                                         <td><?php echo $row->first_name . ' ' . $row->middle_initial . ' ' . $row->last_name ?></td>
                                         <td><?php echo $row->email_address ?></td>
                                         <td><?php echo $row->contact_number ?></td>
-                                        <td><?php echo $row->role ?></td>
                                         <td><?php echo $row->date_created ?></td>
                                         
                                         <td> <?php echo anchor("index.php/users/view_user/$row->user_id", 'View'); ?></td>
