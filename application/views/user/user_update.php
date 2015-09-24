@@ -1,7 +1,7 @@
 <div id = "container">	
 	<div class = "row">
 		<div class = "col-md-12" style="background-color:#363636;color:#fbde43;text-align:center; ">
-			<div id = "error">
+		    <div id = "error">
     			<?php echo validation_errors(); ?>
     		</div>
 			<h1>UPDATE USER </h1>

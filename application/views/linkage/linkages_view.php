@@ -208,7 +208,7 @@
                                         <a href="#close" title="Close" class="close">X</a>
                                         <div id = "register_form">
                                             <br>
-                                            <p> Are you sure you want to <em>DELETE</em> this record?</p>
+                                            Are you sure you want to <em>DELETE</em> this record?
                                             <?php
                                                 echo form_open('index.php/linkages/delete/' . $row->linkage_id);
                                                 echo form_submit('submit', 'Yes! I am 100% sure!');

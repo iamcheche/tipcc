@@ -131,7 +131,7 @@
                                 
                                 <div class = "col-md-3">
                                     <?php echo img(array('src'=>'img/f2logistics.jpg', 'style' => 'box-shadow: 2px 1px 5px #191919; width:100%; ')); ?>
-                                    <p>Jollibee</p>
+                                    <p>F2 Logistics</p>
                                 </div>
                             </div>
 

@@ -50,7 +50,9 @@
             <li></li>
             <li> 
                 <h4 style="margin-top: 6.5%; margin-left: 2%;"> 
-                Howdy, <?php echo $username; ?> | <a href = "#openLogout">Logout</a></h4></li>
+                    Hello <?php echo $username; ?>! | <a href = "#openLogout">Logout</a>
+                </h4>
+            </li>
                 <div id="openLogout" class="modalDialog">
                     <div>
                         <a href="#close" title="Close" class="close">X</a>
